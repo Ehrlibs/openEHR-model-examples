@@ -7,7 +7,7 @@ Only ones needed as examples are then manually added.
 
 The following structure was created with minimal README files in each directory:
 
-README.md (root)
+```
 local/
   archetypes/
     cluster/
@@ -26,3 +26,4 @@ templates/
   entry/
   section/
 termsets/
+```
