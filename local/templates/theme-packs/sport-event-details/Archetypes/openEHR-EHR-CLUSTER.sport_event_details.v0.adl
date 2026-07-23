@@ -1,0 +1,984 @@
+archetype (adl_version=1.4; uid=55bdd9f8-68ce-43dc-a479-d192514c7057)
+	openEHR-EHR-CLUSTER.sport_event_details.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["date"] = <"2026-07-22">
+				["name"] = <"openEHR Assistant">
+			>
+		>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["date"] = <"2022-06-15">
+				["name"] = <"Erik Sundvall">
+				["organisation"] = <"Karolinska University hospital + Institute & Linköping University, Sweden">
+				["email"] = <"erik.sundvall@regionstockholm.se">
+			>
+		>
+		["fr"] = <
+			language = <[ISO_639-1::fr]>
+			author = <
+				["date"] = <"2026-07-22">
+				["name"] = <"openEHR Assistant">
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+				["date"] = <"2026-07-22">
+				["name"] = <"openEHR Assistant">
+			>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+				["date"] = <"2026-07-22">
+				["name"] = <"openEHR Assistant">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2022-06-15">
+		["name"] = <"Erik Sundvall">
+		["organisation"] = <"Karolinska University hospital + Institute & Linköping University, Sweden">
+		["email"] = <"erik.sundvall@regionstockholm.se">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Erfassung von Details zu einem Teilnehmer (Trainingserfahrung) bei einer Freizeit-Sportveranstaltung und wo entlang der Strecke ein Ereignis, zum Beispiel ein Unfall, auftritt. Beispielsweise für Hausarztpraxen und Notaufnahmen, die Statistiken zur Unfallprävention sammeln.">
+			keywords = <"Unfallort","Freizeitlauf","Sportveranstaltung">
+			use = <"Als Ergänzung in Formularen wie Verletzungsmeldeformularen verwenden. An die für die Veranstaltung relevanten Angaben anpassen; bei einem Radrennen ist möglicherweise der Ort am wichtigsten, bei Mannschaftssport auf einem Spielfeld eher die Zeit seit Spielbeginn. In Templates Felder weglassen, die nicht zutreffen.">
+		>
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"Att registrera detaljer om en delatgare (träningsvana) i ett motionslopp och var längs loppet en händelse, t.ex. olycka, inträffar. Exempelvis på vårdcentral och akutmottagning som vill samla statistik för att förebygga olyckor.">
+			keywords = <"olycksplats","motionslopp","sportevent">
+			use = <"Används som tillägg i t.ex. fomulär med skaderapportering. Anpassa efter vad som är intressant för evenemanget, i ett cykellopp är kanske platsen intressant och i lagsport på en spelplan kanske tid sedan matchstart är intressantare. I template, utelämna de fält som inte passar.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details about a participant (training experience) in a recreational sports event and where along the event route an incident, for example an accident, occurs. For example for primary care and emergency departments collecting statistics to prevent accidents.">
+			keywords = <"accident location","recreational race","sport event">
+			use = <"Use as a supplement in forms such as injury reporting forms. Adapt to what is relevant for the event; in a cycling race location may be most relevant, while in team sports on a pitch time since match start may be more relevant. In templates, omit fields that do not apply.">
+		>
+		["fr"] = <
+			language = <[ISO_639-1::fr]>
+			purpose = <"Pour enregistrer les détails concernant un participant (expérience d'entraînement) à un événement sportif récréatif et l'endroit le long du parcours où un incident, par exemple un accident, se produit. Par exemple pour les centres de soins primaires et les services d'urgence collectant des statistiques pour prévenir les accidents.">
+			keywords = <"lieu de l'accident","course récréative","événement sportif">
+			use = <"À utiliser en complément dans des formulaires tels que les formulaires de déclaration de blessure. Adapter à ce qui est pertinent pour l'événement ; dans une course cycliste, le lieu peut être le plus pertinent, tandis qu'en sport d'équipe sur un terrain, le temps écoulé depuis le début du match peut l'être davantage. Dans les modèles, omettre les champs qui ne s'appliquent pas.">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Para registrar detalles sobre un participante (experiencia de entrenamiento) en un evento deportivo recreativo y dónde a lo largo del recorrido ocurre un incidente, por ejemplo un accidente. Por ejemplo, para atención primaria y servicios de urgencias que recopilan estadísticas para prevenir accidentes.">
+			keywords = <"lugar del accidente","carrera recreativa","evento deportivo">
+			use = <"Usar como complemento en formularios como formularios de reporte de lesiones. Adaptar a lo relevante para el evento; en una carrera ciclista puede ser más relevante el lugar, mientras que en deportes de equipo en un campo puede serlo el tiempo desde el inicio del partido. En plantillas, omitir los campos que no apliquen.">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			purpose = <"Per registrar detalls sobre un participant (experiència d'entrenament) en un esdeveniment esportiu recreatiu i on al llarg del recorregut es produeix un incident, per exemple un accident. Per exemple, per a l'atenció primària i serveis d'urgències que recopilen estadístiques per prevenir accidents.">
+			keywords = <"lloc de l'accident","cursa recreativa","esdeveniment esportiu">
+			use = <"Utilitzar com a complement en formularis com formularis de reportatge de lesions. Adaptar al que sigui rellevant per a l'esdeveniment; en una cursa ciclista pot ser més rellevant el lloc, mentre que en esports d'equip en un camp pot ser-ho el temps des de l'inici del partit. En plantilles, ometre els camps que no s'apliquin.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"e9cd22b513f694a07ad9acc8d82d7dee">
+		["build_uid"] = <"dc305afe-21cd-39a4-827d-d9e6cb0cd853">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Sport event
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Event name
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0030] matches {    -- Type of exercise/sport
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0031,    -- Cycling
+							at0032,    -- Running
+							at0033,    -- Skiing
+							at0034]    -- Swimming
+						}
+					}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Training experience
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0016,    -- Beginner
+							at0017,    -- Recreational athlete
+							at0018]    -- Elite level
+						}
+					}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Number of previous participations in this event
+				value matches {
+					DV_COUNT matches {
+						magnitude matches {|>=0|}
+					}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Time after start
+				value matches {
+					DV_DURATION matches {*}
+				}
+			}
+			CLUSTER[at0006] occurrences matches {0..1} matches {    -- Location
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Distance from start
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"km">
+									>
+									["2"] = <
+										units = <"m">
+									>
+									["3"] = <
+										units = <"[mi_i]">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Address or description
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0009] occurrences matches {0..1} matches {    -- Position
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0010] occurrences matches {0..1} matches {    -- Longitude
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::497]>
+										list = <
+											["1"] = <
+												units = <"deg">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0011] occurrences matches {0..1} matches {    -- Latitude
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::497]>
+										list = <
+											["1"] = <
+												units = <"deg">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0022] occurrences matches {0..1} matches {    -- Protective equipment worn on
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0026] occurrences matches {0..1} matches {    -- Head
+						value matches {
+							DV_BOOLEAN matches {*}
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0036,    -- No protection or headwear
+									at0037,    -- Helmet
+									at0038,    -- Cap
+									at0039]    -- Hat
+								}
+							}
+						}
+					}
+					ELEMENT[at0040] occurrences matches {0..1} matches {    -- Feet
+						value matches {
+							DV_CODED_TEXT matches {*}
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0027] occurrences matches {0..1} matches {    -- Hands
+						value matches {
+							DV_CODED_TEXT matches {*}
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0028] occurrences matches {0..1} matches {    -- Joints
+						value matches {
+							DV_CODED_TEXT matches {*}
+							DV_BOOLEAN matches {*}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0041] occurrences matches {0..*} matches {    -- Additional information
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sport event">
+					description = <"Details about a recreational sports event, usually a recurring major event open to the general public.">
+				>
+				["at0001"] = <
+					text = <"Event name">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Training experience">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Number of previous participations in this event">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Time after start">
+					description = <"Relative time since the participant started the event, for statistical purposes.">
+					comment = <"Absolute time (clock time) is not recorded here but often elsewhere, for example in an injury reporting form.">
+				>
+				["at0006"] = <
+					text = <"Location">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Distance from start">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Address or description">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Position">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Longitude">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Latitude">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Beginner">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Recreational athlete">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Elite level">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Protective equipment worn on">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Head">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Hands">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Joints">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Type of exercise/sport">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Cycling">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Running">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Skiing">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Swimming">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"No protection or headwear">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Helmet">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Cap">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Hat">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Feet">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Additional information">
+					description = <"Place for additional information required for local adaptations or adaptation to other reference models or formal requirements.">
+					comment = <"For example: local information requirements or metadata for adaptation to FHIR.">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sportevenemang">
+					description = <"Detaljer om ett motionslopp (vanligtvis återkommande stort sport-event där \"vanligt folk\" kan deltaga).">
+				>
+				["at0001"] = <
+					text = <"Evenemangets namn">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Träningsvana">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Antal tidigare deltaganden i detta evenemang">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Tid efter start">
+					description = <"Relativ tid sedan deltagaren startade i evenemanget, för ststistiska syften.">
+					comment = <"Absolut tid (klockslag) anges inte här utan ofta någon annanstans i t.ex. ett skaderapporteringsformulär.">
+				>
+				["at0006"] = <
+					text = <"Plats">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Sträcka från Start">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Adress eller beskrivning">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Position">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Longitud">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Latitud">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Nybörjare">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Motionsidrottare">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Elitnivå">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Skyddsutrustning använd på">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Huvud">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Händer">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Leder">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Typ av motion/sport">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Cykling">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Löpning">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Skidåkning">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Simning">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Inget skydd eller huvudbonad">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Hjälm">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Mössa">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Hatt">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Fötter">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Tilläggsinformation">
+					description = <"Plats för tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.
+
+Exempelvis lokala informationskrav eller metadata för anpassning till FHIR.">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sportveranstaltung">
+					description = <"Details zu einer Freizeit-Sportveranstaltung, in der Regel ein wiederkehrendes großes Event, das für die Allgemeinheit zugänglich ist.">
+				>
+				["at0001"] = <
+					text = <"Name der Veranstaltung">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Trainingserfahrung">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Anzahl früherer Teilnahmen an dieser Veranstaltung">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Zeit nach Start">
+					description = <"Relative Zeit seit dem Start des Teilnehmers bei der Veranstaltung, zu statistischen Zwecken.">
+					comment = <"Absolute Zeit (Uhrzeit) wird hier nicht angegeben, sondern oft an anderer Stelle, zum Beispiel in einem Verletzungsmeldeformular.">
+				>
+				["at0006"] = <
+					text = <"Ort">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Strecke ab Start">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Adresse oder Beschreibung">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Position">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Längengrad">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Breitengrad">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Anfänger">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Freizeitsportler">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Eliteniveau">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Schutzausrüstung an Körperteil">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Kopf">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Hände">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Gelenke">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Art der Bewegung/Sportart">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Radfahren">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Laufen">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Skifahren">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Schwimmen">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Kein Schutz oder keine Kopfbedeckung">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Helm">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Mütze">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Hut">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Füße">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Zusätzliche Informationen">
+					description = <"Platz für zusätzliche Informationen, die für lokale Anpassungen oder Anpassungen an andere Referenzmodelle oder formale Anforderungen erforderlich sind.">
+					comment = <"Zum Beispiel: lokale Informationsanforderungen oder Metadaten für die Anpassung an FHIR.">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Evento deportivo">
+					description = <"Detalles de un evento deportivo recreativo, normalmente un evento importante y recurrente abierto al público en general.">
+				>
+				["at0001"] = <
+					text = <"Nombre del evento">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Experiencia de entrenamiento">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Número de participaciones anteriores en este evento">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Tiempo tras la salida">
+					description = <"Tiempo relativo desde que el participante inició el evento, con fines estadísticos.">
+					comment = <"La hora absoluta (reloj) no se registra aquí, sino a menudo en otro lugar, por ejemplo en un formulario de reporte de lesiones.">
+				>
+				["at0006"] = <
+					text = <"Lugar">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Distancia desde la salida">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Dirección o descripción">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Posición">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Longitud">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Latitud">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Principiante">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Deportista recreativo">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Nivel élite">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Equipo de protección usado en">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Cabeza">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Manos">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Articulaciones">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Tipo de ejercicio/deporte">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Ciclismo">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Carrera">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Esquí">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Natación">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Sin protección ni prenda para la cabeza">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Casco">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Gorro">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Sombrero">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Pies">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Información adicional">
+					description = <"Espacio para información adicional requerida para adaptaciones locales o adaptación a otros modelos de referencia o requisitos formales.">
+					comment = <"Por ejemplo: requisitos de información local o metadatos para adaptación a FHIR.">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Esdeveniment esportiu">
+					description = <"Detalls d'un esdeveniment esportiu recreatiu, normalment un esdeveniment important i recurrent obert al públic en general.">
+				>
+				["at0001"] = <
+					text = <"Nom de l'esdeveniment">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Experiència d'entrenament">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Nombre de participacions anteriors en aquest esdeveniment">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Temps després de la sortida">
+					description = <"Temps relatiu des que el participant va iniciar l'esdeveniment, amb finalitats estadístiques.">
+					comment = <"El temps absolut (rellotge) no s'indica aquí sinó sovint en un altre lloc, per exemple en un formulari de reportatge de lesions.">
+				>
+				["at0006"] = <
+					text = <"Lloc">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Distància des de la sortida">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Adreça o descripció">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Posició">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Longitud">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Latitud">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Principiant">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Esportista recreatiu">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Nivell d'elit">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Equip de protecció utilitzat a">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Cap">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Mans">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Articulacions">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Tipus d'exercici/esport">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Ciclisme">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Cursa">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Esquí">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Natació">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Sense protecció ni cobertura per al cap">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Casc">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Gorra">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Barret">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Peus">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Informació addicional">
+					description = <"Espai per a informació addicional necessària per a adaptacions locals o adaptació a altres models de referència o requisits formals.">
+					comment = <"Per exemple: requisits d'informació local o metadades per a l'adaptació a FHIR.">
+				>
+			>
+		>
+		["fr"] = <
+			items = <
+				["at0000"] = <
+					text = <"Événement sportif">
+					description = <"Détails d'un événement sportif récréatif, généralement un grand événement récurrent ouvert au grand public.">
+				>
+				["at0001"] = <
+					text = <"Nom de l'événement">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Expérience d'entraînement">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Nombre de participations antérieures à cet événement">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Temps après le départ">
+					description = <"Temps relatif depuis le départ du participant à l'événement, à des fins statistiques.">
+					comment = <"L'heure absolue (horloge) n'est pas indiquée ici mais souvent ailleurs, par exemple dans un formulaire de déclaration de blessure.">
+				>
+				["at0006"] = <
+					text = <"Lieu">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Distance depuis le départ">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Adresse ou description">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Position">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Longitude">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Latitude">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Débutant">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Sportif de loisir">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Niveau élite">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Équipement de protection porté sur">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Tête">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Mains">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Articulations">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Type d'exercice/sport">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Cyclisme">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Course à pied">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Ski">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Natation">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Aucune protection ni couvre-chef">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Casque">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Bonnet">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Chapeau">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Pieds">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Informations complémentaires">
+					description = <"Emplacement pour les informations complémentaires requises pour les adaptations locales ou l'adaptation à d'autres modèles de référence ou exigences formelles.">
+					comment = <"Par exemple : exigences d'information locales ou métadonnées pour l'adaptation à FHIR.">
+				>
+			>
+		>
+	>

@@ -1,8 +1,9 @@
-﻿archetype (adl_version=1.4; uid=418f1d0c-1e4b-4874-8b83-af84b4e7a8f1)
+archetype (adl_version=1.4; uid=418f1d0c-1e4b-4874-8b83-af84b4e7a8f1)
 	openEHR-EHR-OBSERVATION.respiration.v2
 
 concept
-	[at0000]	-- Respiration
+	[at0000]
+
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -17,9 +18,9 @@ language
 		["sv"] = <
 			language = <[ISO_639-1::sv]>
 			author = <
-				["name"] = <"Kirsi Poikela, Åsa Skagerhult, Manna Vosta, Rikard Lövström">
-				["organisation"] = <"Tieto Sweden Healthcare & Welfare AB, Region Östergötland, Karolinska University Hospital">
-				["email"] = <"ext.kirsi.poikela@tieto.com, asa.skagerhult@regionostergotland.se, manna.vosta@regionstockholm.se, rikard.lovstrom@regionstockholm.se">
+				["name"] = <"Kirsi Poikela, Åsa Skagerhult">
+				["organisation"] = <"Tieto Sweden Healthcare & Welfare AB, Region Östergötland">
+				["email"] = <"ext.kirsi.poikela@tieto.com, asa.skagerhult@regionostergotland.se">
 			>
 		>
 		["fi"] = <
@@ -70,28 +71,31 @@ language
 		["nl"] = <
 			language = <[ISO_639-1::nl]>
 			author = <
-				["name"] = <"Marja Buur, Joost Holslag">
-				["organisation"] = <"Medisch Centrum Alkmaar, Nedap">
-				["email"] = <"m.buur-krom@mca.nl, joost.holslag@nedap.com">
+				["name"] = <"Marja Buur">
+				["organisation"] = <"Medisch Centrum Alkmaar">
+				["email"] = <"m.buur-krom@mca.nl">
 			>
-			accreditation = <"MD">
 		>
 	>
+
 description
 	original_author = <
+		["date"] = <"2009-07-17">
 		["name"] = <"Ian McNicoll">
 		["organisation"] = <"freshEHR Clinical Informatics, United Kingdom">
 		["email"] = <"ian.mcnicoll@freshEHR.com">
-		["date"] = <"2009-07-17">
 	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Karin Aarsheim, Helse Førde, Norway","Morten Aas, Diakonhjemmet Sykehus, Norway","Tomas Alme, Norway","Erling Are Hole, Helse Bergen, Norway","Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)","Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)","Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway","Fredrik Borchsenius, Oslo universitetssykehus, Norway","Pål Brekke, OUS Rikshospitalet, Norway","Marja Buur, Medisch Centrum Alkmaar/ Code24, Netherlands","Gregory Caulton, PatientOS Inc., United States","Stephen Chu, NeHTA, Australia","Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway","Sebastian Garde, Ocean Informatics, Germany","Soon Ghee Yap, Singapore Health Services Pte Ltd, Singapore","Mikkel Gaup Grønmo, Helse-Nord, FSE, Norway (openEHR Editor)","Atle Hansen, Universitetssykehuset Nord-Norge, Norway","Anne Harbison, CPCER, Australia","Sam Heard, Ocean Informatics, Australia","Kristian Heldal, Telemark Hospital Trust, Norway","Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway","Omer Hotomaroglu, Turkey","Sundaresan Jagannathan, Scottish NHS, United Kingdom","Andrew James, University of Toronto, Canada","Tom Jarl Jakobsen, Helse Bergen, Norway","Heather Leslie, Atomica Informatics, Australia (Editor)","Rikard Lovstrom, Swedish Medical Association, Sweden","Hallvard Lærum, Direktoratet for e-helse, Norway","Arne Løberg Sæter, DIPS ASA, Norway","Hildegard McNicoll, freshEHR Clinical Informatics Ltd., UK","Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)","Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands","Anne Pauline Anderssen, Helse Nord RHF, Norway","Thomas Schopf, University Hospital of North-Norway, Norway","Micaela Thierley, Helse Bergen/Haraldsplass sykehus, Norway","Nils Thomas Songstad, UNN HF, BUK, Barneavdelingen., Norway","Kevin Thon, SKDE, Norway","John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)","Thomas Wilson, Finnmarkssykehuset HF Klinikk Hammerfest, Norway">
 	details = <
 		["de"] = <
 			language = <[ISO_639-1::de]>
 			purpose = <"Zur Repräsentation der charakteristischen Eigenschaften der Spontanatmung einer Person.">
+			keywords = <"Respirationen","Atmung","Atem","Atmet","Respiration">
+			copyright = <"© openEHR Foundation">
 			use = <"Zur Repräsentation der beobachteten und gemessenen Charakteristiken der Spontanatmung einer Person, einschließlich Atemfrequenz, Atmungstiefe und Rhythmus.
 
 Die Atmung wird üblicherweise als eine Komponente der Vitalparameter protokolliert.">
-			keywords = <"Respirationen", "Atmung", "Atem", "Atmet", "Respiration">
 			misuse = <"Nicht zur Repräsentation der körperlichen Untersuchung des Atmungssystems verwenden. Verwenden Sie hierfür die Familie der Archetypen der körperlichen Untersuchung, wie z.B. CLUSTER.exam-chest oder CLUSTER.exam-lung.
 
 Nicht zur Repräsentation der von weiteren Messungen im Zusammenhang mit der Atmung verwenden. Verwenden Sie hierfür bestimmte Archetypen, z.B. OBSERVATION.pulse_oximetry. 
@@ -99,15 +103,14 @@ Nicht zur Repräsentation der von weiteren Messungen im Zusammenhang mit der Atm
 Nicht zur Repräsentation der Atemfunktion. Verwenden Sie hierfür bestimmte Archetypen, z.B. OBSERVATION.pulmonary_function.
 
 Nicht zur Repräsentation von Daten über einer Personen die künstlich beatmet werden verwenden.">
-			copyright = <"© openEHR Foundation">
 		>
 		["fi"] = <
 			language = <[ISO_639-1::fi]>
 			purpose = <"*To record the characteristics of spontaneous breathing by an individual.(en)">
+			keywords = <"*respirations(en)","*breathing(en)","*breath(en)","*resps(en)","*respiration(en)">
 			use = <"*Use to record the observed and measured characteristics of spontaneous breathing by an individual, including respiratory rate, depth and rhythm.
 
 Respirations are commonly recorded as one component of Vital signs.(en)">
-			keywords = <"*respirations(en)", "*breathing(en)", "*breath(en)", "*resps(en)", "*respiration(en)">
 			misuse = <"*Not to be used to record the physical examination of the respiratory system - use the physical examination family of archetypes for this purpose, such as CLUSTER.exam-chest or CLUSTER.exam-lung.
 
 Not to be used to record other measurements related to breathing - use specific archetypes for the purpose, for example OBSERVATION.pulse_oximetry. 
@@ -118,27 +121,27 @@ Not to be used for recording details about individuals who are undergoing assist
 		>
 		["sv"] = <
 			language = <[ISO_639-1::sv]>
-			purpose = <"Att registrera karakteristika för en individs spontana andning.">
-			use = <"Används för att registrera observerade och uppmätta karakteristika av en individs spontana andning, inklusive andningsfrekvens, djup och rytm.
-
-Respiration registreras ofta som en komponent av vitalparametrar.">
-			keywords = <"respiration", "andning", "andetag", "andningsfrekvens", "AF">
-			misuse = <"Ska inte användas för att registrera den fysikaliska undersökningen av andningssystemet. Använd i stället någon av arketyperna om fysisk undersökning, exempelvis CLUSTER.exam-chest eller CLUSTER.exam-lung.
-
-Ska inte användas för att registrera andra mätningar relaterade till andning. Använd i stället specifika arketyper för detta ändamål, exempelvis OBSERVATION.pulse_oximetry.
-
-Ska inte användas för att registrera mått på lungfunktion. Använd i stället specifika arketyper för detta ändamål, exempelvis OBSERVATION.pulmonary_function.
-
-Ska inte användas för att registrera detaljer om individer som får assisterad ventilation.">
+			purpose = <"Att mäta de observerade egenskaperna vid spontanandning.">
+			keywords = <"respiration","andning","andningstag","resp","respiration">
 			copyright = <"© openEHR Foundation">
+			use = <"Används för att registrera de observerade och uppmätta egenskaperna i samband med spontanandning hos en person, inklusive andningsfrekvens, djup och rytm.
+
+Respiration registreras vanligen som en av vitalparametrarna.">
+			misuse = <"Används inte för att registrera fysisk undersökning av andningssystemet. Använd i stället någon av arketyperna om fysisk undersökning, exempelvis CLUSTER.exam-chest or CLUSTER.exam-lung.
+
+Används inte för att registrera andra undersökningar relaterade till andning. Använd i stället specifika arketyper för detta ändamål, exempelvis OBSERVATION.pulse_oximetry.
+
+Används inte för att registrera funktionell bedömning av andning. Använd i stället specifika arketyper för detta ändamål, exempelvis OBSERVATION.pulmonary_function.
+
+Används inte för att registrera detaljer när patienten får assisterad ventilationsbehandling.">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"For å registrere de observerte karakteristika ved spontant åndedrett.">
+			keywords = <"pusting","respirasjon","pust","respirasjoner","frekvens","rytme","vital","tegn","livsfunksjoner","åndedrett","åndedrag","ventilasjon","hyperventilering","hyperventilasjon","hypoventilering","hypoventilasjon","ånde","blåse">
 			use = <"Brukes til å registrere observerte og målte karakteristika ved spontant åndedrett, inkludert frekvens, dybde og rytme.
 
 Registrering av observasjoner av åndedrett er vanligvis en del av vitale målinger.">
-			keywords = <"pusting", "respirasjon", "pust", "respirasjoner", "frekvens", "rytme", "vital", "tegn", "livsfunksjoner", "åndedrett", "åndedrag", "ventilasjon", "hyperventilering", "hyperventilasjon", "hypoventilering", "hypoventilasjon", "ånde", "blåse">
 			misuse = <"Skal ikke brukes for å registrere undersøkelse av åndedrettssystemet, bruk spesifikke arketyper i gruppen av Undersøkelsesfunn til dette, for eksempel CLUSTER.exam-chest eller CLUSTER.exam-lung.
 
 Skal ikke brukes for å registrere andre målinger knyttet til åndedrettet, bruk spesifikke arketyper til dette, for eksempel OBSERVATION-pulse_oximetry (Pulsoksymetri).
@@ -150,38 +153,39 @@ Skal ikke brukes til å registrere detaljer knyttet til assistert ventilasjon.">
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			purpose = <"Para registrar las características de la respiración espontánea.">
+			keywords = <"respiraciones","respiración","FR">
+			copyright = <"© openEHR Foundation">
 			use = <"Usar para registrar las características observadas y medidas, relacionadas con la respiraciones espontáneas en una persona, incluyendo frecuencia respiratoria, profundidad y ritmo.
 
 Las respiraciones son comúnmente registradas como un componente de los signos vitales (los cuales abarcan la presión arterial, el pulso, la temperatura y la oximetría de pulso). Hay arquetipos específicos adicionales para cada uno de esos conceptos.
 
 Las respiraciones deberían ser medidas antes de las comidas en neonatos e infantes jóvenes.">
-			keywords = <"respiraciones", "respiración", "FR">
 			misuse = <"No usar para intentar registrar otros aspectos del exámen respiratorio en general. Otros arquetipos específicos serán utilizados para registrar características tales como esfuerzo respiratorio, hallazgos auscultatorios, etc.
 
 No usar para registrar detalles cuando el paciente está en ventilación asistida.">
-			copyright = <"© openEHR Foundation">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
 			purpose = <"Registrar as características observadas da respiração espontânea.">
+			keywords = <"respirações","respiração">
+			copyright = <"© openEHR Foundation">
 			use = <"Usar para registrar as características observadas e medidas relacionadas com as respirações espontâneas em uma pessoa, incluindo frequência respiratória, profundidade e ritmo.
 
 As respirações são comumente registradas como um componente de sinais vitais - incluindo pressão arterial, pulso, temperatura e oximetria. Há arquétipos adicionais, específicos para cada um desses conceitos.
 
 As respirações devem ser medidas antes de refeições em recém-nascidos e crianças jovens.">
-			keywords = <"respirações", "respiração">
 			misuse = <"Não deve ser usado para tentar registrar outros aspectos mais amplos do exame ou avaliação respiratória. Outros arquétipos específicos serão utilizados para registrar características tais como esforço respiratório, achados auscultatórios, etc.
 
 Não deve ser usado para registrar detalhes quando o paciente está sob ventilação assistida.">
-			copyright = <"© openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record the characteristics of spontaneous breathing by an individual.">
+			keywords = <"respirations","breathing","breath","resps","respiration">
+			copyright = <"© openEHR Foundation">
 			use = <"Use to record the observed and measured characteristics of spontaneous breathing by an individual, including respiratory rate, depth and rhythm.
 
 Respirations are commonly recorded as one component of vital signs.">
-			keywords = <"respirations", "breathing", "breath", "resps", "respiration">
 			misuse = <"Not to be used to record the physical examination of the respiratory system - use the physical examination family of archetypes for this purpose, such as CLUSTER.exam-chest or CLUSTER.exam-lung.
 
 Not to be used to record other measurements related to breathing - use specific archetypes for the purpose, for example OBSERVATION.pulse_oximetry. 
@@ -189,51 +193,50 @@ Not to be used to record other measurements related to breathing - use specific 
 Not to be used to record functional assessments of breathing - use specific archetypes for the purpose, for example OBSERVATION.pulmonary_function.
 
 Not to be used for recording details about individuals who are undergoing assisted ventilation.">
-			copyright = <"© openEHR Foundation">
 		>
 		["ar-sy"] = <
 			language = <[ISO_639-1::ar-sy]>
 			purpose = <"لتسجيل الخصائص الملاحظة - المشاهدة - للتنفس التلقائي">
+			keywords = <"*respirations(en)","*breathing(en)","*breath(en)","*resps(en)","*respiration(en)">
+			copyright = <"© openEHR Foundation">
 			use = <"يستخدم لتسجيل الخصائص الملاحظة - المشاهدة - أو التي يتم قياسها فيما يتعلق بالتنفس التلقائي لدى الشخص, بما فيه معدل  ( سرعة) التنفس, عمق التنفس و نَظْمه.
 
 عادة ما يتم تسجيل التنفس كجزء من العلامات الحياتية - و التي تتكون من ضغط الدم, النبض, درجة الحرارة و قياس التأكسج. و يوجد بالفعل نماذج مخصوصة إضافية لكل من هذه المفاهيم.
 
 ينبغي قياس التنفس قبل الإطعام في حديثي الولادة و الرضع الصغار">
-			keywords = <"*respirations(en)", "*breathing(en)", "*breath(en)", "*resps(en)", "*respiration(en)">
 			misuse = <"لا يمكن استخدام النموذج لمحاولة تسجيل الجوانب الأخرى من الفحص أو التقييم التنفسي أشمل. يمكن استخدام نماذج أخرى مخصصة لتسجيل الخصائص من المجهود التنفسي و الموجودات التسمعية, إلى آخره
  لا يستخدم لتسجيل تفاصيل حالة المنريض إذا كان يخضع للتهوية المساعَدة">
-			copyright = <"© openEHR Foundation">
 		>
 		["fa"] = <
 			language = <[ISO_639-1::fa]>
 			purpose = <"برای ثبت ویژگی هایی قابل مشاهده تنفس خود بخود بکار می رود.">
+			keywords = <"تنفسها","نفس کشیده","نفس","تنفسی">
+			copyright = <"© openEHR Foundation">
 			use = <"برای ثبت ویژگی هایی قابل مشاهده و قابل اندازه گیری مربوط به تنفس خود بخود فرد ، شامل میزان تنفس ، عمق و ریتم استفاده می شود.
 تنفسها معمولا به عنوان یکی از مولفه های علایم حیاتی ثبت می شوند -شامل فشار خون ، نبض ، درجه حرارت واندازه گیری اکسیژن.
 در نوزادان و شیر خواران اندازه گیری تنفس قبل از تغذیه اندازه گیری می شود  .
 
 ">
-			keywords = <"تنفسها", "نفس کشیده", "نفس", "تنفسی">
 			misuse = <"برای ثبت سایر جنبه های آزمایشات یا ارزیابی گسترده تر تنفسی استفاده نمی شود.
 از سایر الگوسازهای تخصصی برای ثبت ویژگی هایی نظیر تلاش برای تنفس،یافته های شنیداری و غیره استفاده نمایید.
 برای ثبت جزییات در زمانی که فرد تحت تنفس مصنوعی است استفاده نکنید .  ">
-			copyright = <"© openEHR Foundation">
 		>
 		["nl"] = <
 			language = <[ISO_639-1::nl]>
-			purpose = <"Voor het vastleggen van observaties van de spontane ademhaling van een individu.">
-			use = <"Gebruik voor het vastleggen van geobserveerd en gemeten eigenschappen van de spontane ademhaling van een individu, inclusief ademhalingsfrequentie, diepte en ritme
+			purpose = <"Om observaties van de spontane ademhaling te registreren ">
+			keywords = <"ademhaling","respiratie","inademen","uitademen","ademteug","adem","ademen">
+			copyright = <"© openEHR Foundation">
+			use = <"Wordt gebruikt om observaties en metingen te registreren, die gerelateerd zijn aan de spontane ademhaling van een persoon, inclusief ademhalingsfrequentie, diepte en ritme
 
-Ademhaling wordt gewoonlijk geregistreerd als onderdeel van de vitale functies.">
-			keywords = <"ademhaling", "respiratie", "inademen", "uitademen", "ademteug", "adem", "ademen">
+Ademhaling wordt gewoonlijk geregistreerd als onderdeel van de vitale functies - bestaande uit bloeddruk, temperatuur en zuurstofsaturatie. Er zijn aanvullende specifieke archetypes voor deze concepten.
+
+De ademhaling moet bij neonaten en jonge kinderen gemeten worden voor de voeding.">
 			misuse = <"Niet te gebruiken om andere aspecten van het uitgebreidere onderzoek of beoordeling van de ademhaling te registreren. Andere, specifieke archetypes zullen gebruikt worden om karakteristieken zoals ademhalingsinspanning en auscultatoire bevindingen te registreren.
 
 Niet te gebruiken voor de registratie van details, als de persoon beademing ondergaat.
 ">
-			copyright = <"© openEHR Foundation">
 		>
 	>
-	lifecycle_state = <"published">
-	other_contributors = <"Karin Aarsheim, Helse Førde, Norway", "Morten Aas, Diakonhjemmet Sykehus, Norway", "Tomas Alme, Norway", "Erling Are Hole, Helse Bergen, Norway", "Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)", "Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)", "Lars Bitsch-Larsen, Haukeland University Hospital, Bergen, Norway", "Fredrik Borchsenius, Oslo universitetssykehus, Norway", "Pål Brekke, OUS Rikshospitalet, Norway", "Marja Buur, Medisch Centrum Alkmaar/ Code24, Netherlands", "Gregory Caulton, PatientOS Inc., United States", "Stephen Chu, NeHTA, Australia", "Einar Fosse, UNN HF, Norwegian Centre for Integrated Care and Telemedicine, Norway", "Sebastian Garde, Ocean Informatics, Germany", "Soon Ghee Yap, Singapore Health Services Pte Ltd, Singapore", "Mikkel Gaup Grønmo, Helse-Nord, FSE, Norway (openEHR Editor)", "Atle Hansen, Universitetssykehuset Nord-Norge, Norway", "Anne Harbison, CPCER, Australia", "Sam Heard, Ocean Informatics, Australia", "Kristian Heldal, Telemark Hospital Trust, Norway", "Andreas Hering, Helse Bergen HF, Haukeland universitetssjukehus, Norway", "Omer Hotomaroglu, Turkey", "Sundaresan Jagannathan, Scottish NHS, United Kingdom", "Andrew James, University of Toronto, Canada", "Tom Jarl Jakobsen, Helse Bergen, Norway", "Heather Leslie, Atomica Informatics, Australia (Editor)", "Rikard Lovstrom, Swedish Medical Association, Sweden", "Hallvard Lærum, Direktoratet for e-helse, Norway", "Arne Løberg Sæter, DIPS ASA, Norway", "Hildegard McNicoll, freshEHR Clinical Informatics Ltd., UK", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (Editor)", "Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Anne Pauline Anderssen, Helse Nord RHF, Norway", "Thomas Schopf, University Hospital of North-Norway, Norway", "Micaela Thierley, Helse Bergen/Haraldsplass sykehus, Norway", "Nils Thomas Songstad, UNN HF, BUK, Barneavdelingen., Norway", "Kevin Thon, SKDE, Norway", "John Tore Valand, Haukeland Universitetssjukehus, Norway (Nasjonal IKT redaktør)", "Thomas Wilson, Finnmarkssykehuset HF Klinikk Hammerfest, Norway">
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -241,10 +244,9 @@ Niet te gebruiken voor de registratie van details, als de persoon beademing onde
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"A1A7B5164F3CFAF0E68A2536547BD79E">
-		["build_uid"] = <"15dd9776-7b1c-4c15-a8e4-74a093337f93">
-		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
-		["revision"] = <"2.0.12">
+		["MD5-CAM-1.0.1"] = <"27648080A2126FCD211086BBB147D4EA">
+		["build_uid"] = <"c197e995-5856-45a4-b7dc-6546d00f1257">
+		["revision"] = <"2.0.5-alpha">
 	>
 
 definition
@@ -372,9 +374,7 @@ definition
 		}
 	}
 
-
 ontology
-	terminologies_available = <"SNOMED-CT", ...>
 	term_definitions = <
 		["pt-br"] = <
 			items = <
@@ -1203,8 +1203,8 @@ Conducting a full respiratory examination, then some of these findings might be 
 					description = <"*@ internal @(en)">
 				>
 				["at0002"] = <
-					text = <"Elke gebeurtenis">
-					description = <"Standaard, ongespecificeerd moment in de tijd of interval gebeurtenis dat/die nader gespecificeerd kan worden in een template of terwijl de applicatie draait.">
+					text = <"any event">
+					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time. (en)">
 				>
 				["at0003"] = <
 					text = <"*List(en)">
@@ -1212,128 +1212,128 @@ Conducting a full respiratory examination, then some of these findings might be 
 				>
 				["at0004"] = <
 					text = <"Frequentie">
-					description = <"De frequentie van spontane ademhaling.">
+					description = <"*The rate of spontaneous breathing. (en)">
 				>
 				["at0005"] = <
-					text = <"Regelmatigheid">
-					description = <"De regelmatigheid van de spontane ademhaling.">
+					text = <"*Regularity (en)">
+					description = <"*The pattern of spontaneous breathing. (en)">
 				>
 				["at0006"] = <
-					text = <"Normaal">
-					description = <"Er is een normaal ademhalingsritme.">
+					text = <"Regelmatig">
+					description = <"Regelmatige ademhaling
+">
 				>
 				["at0007"] = <
-					text = <"Abnormaal">
-					description = <"Er is een abnormaal ademhalingsritme.">
+					text = <"Onregelmatig">
+					description = <"Onregelmatige ademhaling">
 				>
 				["at0009"] = <
-					text = <"Klinische interpretatie">
-					description = <"Enkel woord, frase of korte beschrijving die de klinische betekenis of significantie weergeeft van de bevindingen van de ademhaling.">
-					comment = <"Coderen met een terminologiestelsel verdient, waar mogelijk, de voorkeur. 
-Bijvoorbeeld: normale ademhaling, aanwijzingen voor ademnood, Kussmaul-ademhaling, Cheyne-Stokes ademhaling, apneu episodes. Meerdere toegestaan.">
+					text = <"Afwijkend ademhalingspatroon">
+					description = <"*Respiratory pattern as a single word, phrase or brief description which represents the clinical meaning and significance of the observations. (en)">
+					comment = <"*Coding with a terminology is preferred, where possible. For example: Normal breathing; Evidence of respiratory distress; Kussmaul's respiration; Cheyne-Stokes respiration; or Apnoeic episodes. Multiple statements are allowed.  (en)">
 				>
 				["at0016"] = <
 					text = <"Diepte">
-					description = <"De diepte van de spontane ademhaling.">
+					description = <"*The depth of spontaneous breathing. (en)">
 				>
 				["at0017"] = <
 					text = <"Normaal">
-					description = <"Normale diepte van de ademhaling.">
+					description = <"Normale diepte van de in- en uitademing">
 				>
 				["at0018"] = <
 					text = <"Oppervlakkig">
-					description = <"Oppervlakkige ademhaling.">
+					description = <"Oppervlakkige ademhaling">
 				>
 				["at0019"] = <
 					text = <"Diep">
-					description = <"Diepe ademhaling.">
+					description = <"Diepe ademhaling">
 				>
 				["at0022"] = <
 					text = <"*List(en)">
 					description = <"*@ internal @(en)">
 				>
 				["at0024"] = <
-					text = <"Klinische beschrijving">
-					description = <"Een verhalende beschrijving van de spontane ademhaling van het individu.">
-					comment = <"Bijvoorbeeld: er valt respiratoire nood op, gebruik van hulpademhalingsspieren, intermitterende ademhalingsstops; opvallende eigenschappen zoals: stridor, knorrend, kreunend, gaspend.
-In het geval van het uitvoeren van een volledig respiratoir onderzoek kunnen deze bevindingen beter geregistreerd worden als onderdeel van onderzoeksresultaten.">
+					text = <"*Clinical description (en)">
+					description = <"*A narrative description about the spontaneous breathing of the individual. (en)">
+					comment = <"*For example: noting respiratory distress, use of accessory muscles or intermittent apnoea; noting characteristics such as stridor, sighing, grunting, groaning, gasping. 
+Conducting a full respiratory examination, then some of these findings might be more appropriately recorded as part of examination findings. (en)">
 				>
 				["at0025"] = <
-					text = <"Variërend">
-					description = <"Variërende diepte van de ademhaling.">
+					text = <"Variabel">
+					description = <"Variabele diepte van de ademteugen">
 				>
 				["at0037"] = <
 					text = <"Inspanning">
-					description = <"Gegevens over de fysieke inspanning tijdens het onderzoek.">
-					comment = <"Het niveau van inspanning tijdens, of net voor de observatie.">
+					description = <"*Details about physical exertion being undertaken during the examination. (en)">
+					comment = <"*The individual's level of exertion during, or just prior to, the observation. (en)">
 				>
 				["at0055"] = <
 					text = <"Toegevoerde zuurstof">
-					description = <"Gegevens over de hoeveelheid zuurstof die toegediend werd aan het individu op moment van observatie.">
-					comment = <"Veronderstelde waardes van 21% zuurstofconcentratie, FiO2 van 0,21 en zuurstofstroom van 0 l/min 0 ml/min.">
+					description = <"*Details of the amount of oxygen being delivered to the individual at the time of observation. (en)">
+					comment = <"*Assumed values of 21% oxygen concentration, Fi02 of 0.21 and oxygen flow rate of 0 l/min or 0 ml/min. (en)">
 				>
 				["at0056"] = <
 					text = <"Beïnvloedende factoren">
-					description = <"Identificatie van problemen of beïnvloedende factoren die invloed hebben op interpretatie van de observatie.">
-					comment = <"Bijvoorbeeld, niveau van angst, pijn, voeding bij kinderen of tracheostomy.">
+					description = <"*Description about any issues or incidental factors that may impact on interpretation of the physical findings. (en)">
+					comment = <"*For example: level of anxiety, pain, feeding in infants, tracheostomy. (en)">
 				>
 				["at0057"] = <
 					text = <"*Tree(en)">
 					description = <"*@ internal @(en)">
 				>
 				["at0058"] = <
-					text = <"Uitbreiding">
-					description = <"Aanvullende informatie benodigd voor het ondervangen van lokale eisen of om te verbinden met andere referentiemodellen/formalismen">
-					comment = <"Bijvoorbeeld: lokale informatie-eisen of extra metadata om te verbinden met FHIR.">
+					text = <"*Cluster(en)">
+					description = <"**(en)">
+					comment = <"*For example: local information requirements or additional metadata to align with FHIR. (en)">
 				>
 				["at0062"] = <
-					text = <"Aanwezigheid">
-					description = <"Observatie van spontane ademhaling.">
-					comment = <"Dit data element kan van pas komen in extreme situaties wanneer een formele meting van de ademhalingsfrequentie niet mogelijk is. Bijvoorbeeld: een individu is buiten bewustzijn en op afstand van de observator, bijvoorbeeld, gevangen in een auto, of van een klif gevallen. Aanwezigheid van ademhaling kan verondersteld worden als de ademhalingsfrequentie > 0/min.">
+					text = <"*Presence (en)">
+					description = <"*Observation of spontaneous respiration. (en)">
+					comment = <"*This data element may be useful in extreme situations where a formal measurement of respiration rate is not possible. For example: a subject is unconscious and distant to the observer, such as trapped in a car or has fallen down a cliff. Presence of respiration can be implied if the 'Rate' >0 breaths/min. (en)">
 				>
 				["at0063"] = <
-					text = <"Aanwezig">
-					description = <"Ademhalingsbewegingen zijn waargenomen.">
+					text = <"*Present (en)">
+					description = <"*Respiratory movements are observed. (en)">
 				>
 				["at0064"] = <
-					text = <"Niet waargenomen">
-					description = <"Ademhalingsbewegingen zijn niet waargenomen bij observatie.">
+					text = <"*Not detected (en)">
+					description = <"*Respiratory movements are not detected on observation. (en)">
 				>
 				["at0065"] = <
-					text = <"Lichaamspositie">
-					description = <"De lichaamspositie van het individu tijdens de observatie.">
+					text = <"*Body position (en)">
+					description = <"*The body position of the individual during the observation. (en)">
 				>
 				["at0066"] = <
-					text = <"Staand/rechtop">
-					description = <"Het individu stond, liep, of was aan het rennen.">
+					text = <"*Standing/upright (en)">
+					description = <"*The individual was standing, walking or running. (en)">
 				>
 				["at0067"] = <
-					text = <"Zittend">
-					description = <"Het individu zat (bijvoorbeeld op bed of in een stoel).">
+					text = <"*Sitting (en)">
+					description = <"*The individual was sitting (for example, on a bed or chair). (en)">
 				>
 				["at0068"] = <
-					text = <"Achterleunend">
-					description = <"Het individu leunde achterover in een hoek van ongeveer 45 graden, met de benen omhoog op het niveau van het bekken.">
+					text = <"*Reclining (en)">
+					description = <"*The individual was reclining at an approximate angle of 45 degrees, with the legs elevated to the level of the pelvis. (en)">
 				>
 				["at0069"] = <
-					text = <"Liggend">
-					description = <"Het individu lag op de rug.">
+					text = <"*Lying (en)">
+					description = <"*The individual was lying flat. (en)">
 				>
 				["at0070"] = <
-					text = <"Opmerking">
-					description = <"Extra verhalende beschrijving van de ademhaling, die niet past in andere velden.">
+					text = <"*Comment (en)">
+					description = <"*Additional narrative about the respirations, not captured in other fields. (en)">
 				>
 				["at0071"] = <
-					text = <"Vooroverliggend">
-					description = <"Het individu lag op de buik.">
+					text = <"*Prone (en)">
+					description = <"*The individual was lying on their front. (en)">
 				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"Respiration">
-					description = <"Karakteristika för en individs spontana andning.">
+					text = <"Andning">
+					description = <"De observerade egenskaperna i spontanandning.">
 				>
 				["at0001"] = <
 					text = <"Historik">
@@ -1349,11 +1349,11 @@ In het geval van het uitvoeren van een volledig respiratoir onderzoek kunnen dez
 				>
 				["at0004"] = <
 					text = <"Frekvens">
-					description = <"Frekvensen av spontan andning.">
+					description = <"Spontanandningens frekvens.">
 				>
 				["at0005"] = <
 					text = <"Regelbundenhet">
-					description = <"Regelbundenheten i spontan andning.">
+					description = <"Spontanandningens regelbundenhet.">
 				>
 				["at0006"] = <
 					text = <"Regelbunden">
@@ -1365,12 +1365,12 @@ In het geval van het uitvoeren van een volledig respiratoir onderzoek kunnen dez
 				>
 				["at0009"] = <
 					text = <"Klinisk tolkning">
-					description = <"Ord, fras eller kort beskrivning som fångar den kliniska betydelsen och signifikansen av andningsfynden.">
-					comment = <"Kodning med en terminologi är att föredra i de fall det är möjligt. Exempelvis normal andning, tecken på andningspåverkan, Kussmauls andning, Cheyne-Stokes andning, eller apnéepisoder. Multipla angivelser är tillåtna.">
+					description = <"Ord, fras eller kort beskrivning som fångar den kliniska betydelsen hos andningsfynden.">
+					comment = <"Kodning med en terminologi rekommenderas där så är möjligt. Exempelvis normal andning, tecken på ansträngd andning, Kussmauls andning, Cheyne-Stokes andning, återkommande apné. Flera val är tillåtet.">
 				>
 				["at0016"] = <
 					text = <"Andningsdjup">
-					description = <"Djupet i spontan andning.">
+					description = <"Spontanandningens djup.">
 				>
 				["at0017"] = <
 					text = <"Normal">
@@ -1382,7 +1382,7 @@ In het geval van het uitvoeren van een volledig respiratoir onderzoek kunnen dez
 				>
 				["at0019"] = <
 					text = <"Djup">
-					description = <"Djup andning.">
+					description = <"Djupandning.">
 				>
 				["at0022"] = <
 					text = <"List">
@@ -1390,28 +1390,28 @@ In het geval van het uitvoeren van een volledig respiratoir onderzoek kunnen dez
 				>
 				["at0024"] = <
 					text = <"Klinisk beskrivning">
-					description = <"Beskrivning avseende individens spontana andning.">
-					comment = <"Notera exempelvis andnöd, användning av accessoriska andningsmuskler, episoder av apné, och fynd såsom stridor, suckande, grymtande, stönande, flämtande, rosslande. Vid en fysikalisk undersökning av lungorna kan vissa av dessa fynd lämpligare dokumenteras som en del av undersökningsresultaten.">
+					description = <"Beskrivning av individens andningsdjup.">
+					comment = <"Exempelvis plågad andning, andningsrörelse med hjälp av accessorisk muskel eller intermittent apné; suckar, grymtningar, jämmer, flämtningar. När en fullständig respiratorisk undersökning genomförs dokumenteras den lämpligen som en del av undersökningsfynden.">
 				>
 				["at0025"] = <
-					text = <"Variabelt">
-					description = <"Variabelt andningsdjup.">
+					text = <"Ojämn">
+					description = <"Ojämnt andningsdjup.">
 				>
 				["at0037"] = <
 					text = <"Ansträngning">
-					description = <"Detaljer om den fysiska ansträngningsnivån vid undersökningstillfället.">
-					comment = <"Individens ansträngningsnivå vid eller strax före observation.">
+					description = <"Detaljer om den fysiska ansträngningen vid undersökningen.">
+					comment = <"Individens ansträngningsnivå under eller strax innan observationen.">
 				>
 				["at0055"] = <
-					text = <"Inandat syre">
-					description = <"Detaljer om syrgastillförsel vid observationstillfället.">
-					comment = <"Värden antas vara 21 % syrgaskoncentration, FiO₂ 0,21, syrgasflöde 0 l/min eller 0 ml/min om inget annat anges.">
+					text = <"Tillförd syrgas">
+					description = <"Detaljer om mängden syrgas som tillförs individen vid observationstillfället.">
+					comment = <"Värden som antas är syrekoncentration på 21%, Fi02 på 0.21 och flödeshastighet av syre på 0 l/min eller 0 ml/min.">
 				>
 				["at0056"] = <
 					text = <"Möjliga felkällor">
-					description = <"Beskrivning av faktorer och felkällor som kan påverka tolkningen av observationen.
+					description = <"Beskrivning av faktorer och felkällor som kan påverka bedömningen av andningen.
 ">
-					comment = <"Exempelvis oro, smärta, spädbarn som ammas, trakeostomi.">
+					comment = <"Exempelvis ångestnivå, smärta, matning av spädbarn, trakeostomi.">
 				>
 				["at0057"] = <
 					text = <"*Tree(en)">
@@ -1425,31 +1425,31 @@ In het geval van het uitvoeren van een volledig respiratoir onderzoek kunnen dez
 				["at0062"] = <
 					text = <"Förekomst">
 					description = <"Observation av spontanandning.">
-					comment = <"Det här datafältet kan vara användbart i extrema situationer där en formell mätning av andningsfrekvensen inte är möjlig. Till exempel: en person är medvetslös och långt ifrån observatören, exempelvis fast i en bil eller har fallit utför en klippa. Andning kan antydas genom att 'frekvens' angivits till >0 andetag/min.">
+					comment = <"Det här fältet kan vara användbart i extrema situationer där formell mätning av andning ej är möjlig. Exempelvis om patienten är medvetslös och befinner sig på annan plats, såsom fast i en bil eller har fallit utför en klippa. Förekomst av andning kan antas om adningsfrekvensen är högre än 0 andetag per minut.">
 				>
 				["at0063"] = <
-					text = <"Påvisad">
-					description = <"Andning observeras.">
+					text = <"Förekommer">
+					description = <"Andningsrörelser observeras.">
 				>
 				["at0064"] = <
-					text = <"Ej påvisad">
-					description = <"Andning observeras inte.">
+					text = <"Ej möjlig att upptäcka">
+					description = <"Andningsrörelser kan inte upptäckas genom observation.">
 				>
 				["at0065"] = <
-					text = <"Kroppsposition">
-					description = <"Individens kroppsposition vid observationen.">
+					text = <"Kroppsställning">
+					description = <"Individens kroppsställning vid observationen.">
 				>
 				["at0066"] = <
-					text = <"Stående/upprätt">
+					text = <"Stående">
 					description = <"Individen stod, gick eller sprang.">
 				>
 				["at0067"] = <
 					text = <"Sittande">
-					description = <"Individen satt, till exempel på en säng eller en stol.">
+					description = <"Individen satt på exempelvis en säng eller en stol.">
 				>
 				["at0068"] = <
-					text = <"Bakåtlutad">
-					description = <"Individen låg bakåtlutade i en vinkel på ungefär 45 grader, med benen upphöjda till bäckennivå.">
+					text = <"Lutande">
+					description = <"Individen lutade sig i ungefär 45 graders vinkel med benen i högläge i bäckennivå.">
 				>
 				["at0069"] = <
 					text = <"Liggande">
@@ -1457,10 +1457,10 @@ In het geval van het uitvoeren van een volledig respiratoir onderzoek kunnen dez
 				>
 				["at0070"] = <
 					text = <"Kommentar">
-					description = <"Kommentarer avseende respirationen som inte täcks av övriga fält.">
+					description = <"Kommentarer avseende andning som inte beskrivs i övriga fält.">
 				>
 				["at0071"] = <
-					text = <"Bukläge">
+					text = <"Magläge">
 					description = <"Individen låg på mage.">
 				>
 			>
@@ -1737,27 +1737,6 @@ Conducting a full respiratory examination, then some of these findings might be 
 					text = <"*Prone (en)">
 					description = <"*The individual was lying on their front. (en)">
 				>
-			>
-		>
-	>
-	term_bindings = <
-		["SNOMED-CT"] = <
-			items = <
-				["at0004"] = <[SNOMED-CT::271625008]>
-				["at0005"] = <[SNOMED-CT::278907009]>
-				["at0006"] = <[SNOMED-CT::276888009]>
-				["at0007"] = <[SNOMED-CT::248585001]>
-				["at0016"] = <[SNOMED-CT::271626009]>
-				["at0017"] = <[SNOMED-CT::301284009]>
-				["at0018"] = <[SNOMED-CT::386616007]>
-				["at0019"] = <[SNOMED-CT::289123006]>
-				["at0025"] = <[SNOMED-CT::248587009]>
-				["at0024"] = <[SNOMED-CT::703852005]>
-				["at0066"] = <[SNOMED-CT::10904000]>
-				["at0067"] = <[SNOMED-CT::33586001]>
-				["at0068"] = <[SNOMED-CT::272580008]>
-				["at0069"] = <[SNOMED-CT::40199007]>
-				["at0071"] = <[SNOMED-CT::1240000]>
 			>
 		>
 	>

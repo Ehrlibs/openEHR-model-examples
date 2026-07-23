@@ -1,0 +1,112 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "vning-15-2j5",
+    "user" : "ErikSundvall@github",
+    "repositoryId" : "vning-15-2j5"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/Accident report including vital signs.t.json",
+    "type" : "template",
+    "id" : "Accident report including vital signs",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2026-07-23T09:42:55.866736527Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.encounter.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.anatomical_location.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.news2.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adhoc.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.pulse_oximetry.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.respiration.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-OBSERVATION.pulse.v2"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.sport_event_details.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.inspired_oxygen.v1"
+    } ]
+  }, {
+    "path" : "Templates/Accident report including vital signs.opt",
+    "type" : "opt",
+    "id" : "Accident report including vital signs",
+    "lastModified" : "2026-07-23T09:42:55.866745527Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.encounter.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.encounter.v1",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.438Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.anatomical_location.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.anatomical_location.v1",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.434Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.problem_diagnosis.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.438Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.news2.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.news2.v1",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.438Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adhoc.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adhoc.v1",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.438Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.pulse_oximetry.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.pulse_oximetry.v1",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.438Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.respiration.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.respiration.v2",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.438Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-OBSERVATION.pulse.v2.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-OBSERVATION.pulse.v2",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.438Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.sport_event_details.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.sport_event_details.v0",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2026-07-23T07:04:20.927Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.inspired_oxygen.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.inspired_oxygen.v1",
+    "sourceId" : "vning-15-2j5",
+    "lastModified" : "2022-06-15T09:39:42.434Z"
+  } ]
+}

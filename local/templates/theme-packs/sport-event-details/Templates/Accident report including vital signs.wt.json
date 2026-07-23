@@ -1,0 +1,3991 @@
+{
+  "templateId" : "Accident report including vital signs",
+  "semVer" : "1.0.0-alpha.7",
+  "version" : "2.3",
+  "defaultLanguage" : "en",
+  "languages" : [ "sv", "de", "en" ],
+  "tree" : {
+    "id" : "accident_report_including_vital_signs",
+    "name" : "Accident report including vital signs",
+    "localizedName" : "Accident report including vital signs",
+    "rmType" : "COMPOSITION",
+    "nodeId" : "openEHR-EHR-COMPOSITION.encounter.v1",
+    "min" : 1,
+    "max" : 1,
+    "localizedNames" : {
+      "sv" : "akutmall_undervisningsexempel_2a",
+      "de" : "akutmall_undervisningsexempel_2a",
+      "en" : "Accident report including vital signs"
+    },
+    "localizedDescriptions" : {
+      "sv" : "Interaktion, kontakt eller vårdhändelse mellan vårdtagare och vårdgivare inom hälso- och sjukvården.",
+      "de" : "Interaktion, Kontakt oder Versorgungsereignis, zwischen einem Versorgungsempfänger und einem Gesundheitsdienstleister.",
+      "en" : "Interaction, contact or care event between a subject of care and healthcare provider(s)."
+    },
+    "aqlPath" : "",
+    "children" : [ {
+      "id" : "context",
+      "rmType" : "EVENT_CONTEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/context",
+      "children" : [ {
+        "id" : "start_time",
+        "name" : "Start_time",
+        "rmType" : "DV_DATE_TIME",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/context/start_time",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ],
+        "inContext" : true
+      }, {
+        "id" : "setting",
+        "name" : "Setting",
+        "rmType" : "DV_CODED_TEXT",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/context/setting",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "value",
+          "type" : "TEXT"
+        } ],
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "problem_diagnosis",
+      "name" : "Problem/Diagnosis",
+      "localizedName" : "Problem/Diagnosis",
+      "rmType" : "EVALUATION",
+      "nodeId" : "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+      "min" : 0,
+      "max" : -1,
+      "localizedNames" : {
+        "sv" : "Problem/Diagnos",
+        "de" : "Problem/Diagnose",
+        "en" : "Problem/Diagnosis"
+      },
+      "localizedDescriptions" : {
+        "sv" : "Detaljer av ett enskilt identifierat hälsotillstånd, skada, funktionshinder eller något annat problem som påverkar individens fysiska, psykiska och eller sociala välbefinnande.",
+        "de" : "Angaben über einen einzelnen identifizierten Gesundheitszustand, eine Verletzung, eine Behinderung oder ein Problem, welches das körperliche, geistige und/oder soziale Wohlergehen einer Einzelperson beeinträchtigt.",
+        "en" : "Details about a single identified health condition, injury, disability or any other issue which impacts on the physical, mental and/or social well-being of an individual."
+      },
+      "annotations" : {
+        "comment" : "Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum, with increasing levels of detail and supportive evidence usually providing weight towards the label of 'diagnosis'."
+      },
+      "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]",
+      "children" : [ {
+        "id" : "injury",
+        "name" : "Injury",
+        "localizedName" : "Injury",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0002",
+        "min" : 1,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "Skada",
+          "de" : "Name des Problems/ der Diagnose",
+          "en" : "Injury"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Identifiering av problemet eller diagnosen efter namn.",
+          "de" : "Namentliche Identifikation des Problems oder der Diagnose.",
+          "en" : "Identification of the problem or diagnosis, by name."
+        },
+        "annotations" : {
+          "comment" : "Coding of the name of the problem or diagnosis with a terminology is preferred, where possible."
+        },
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002,'Injury']/value",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "clinical_description",
+        "name" : "Clinical description",
+        "localizedName" : "Clinical description",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0009",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "Klinisk beskrivning",
+          "de" : "Klinische Beschreibung",
+          "en" : "Clinical description"
+        },
+        "localizedDescriptions" : {
+          "sv" : "En beskrivning av problemet eller diagnosen.",
+          "de" : "Beschreibung des Problems oder der Diagnose.",
+          "en" : "Narrative description about the problem or diagnosis."
+        },
+        "annotations" : {
+          "comment" : "Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis."
+        },
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0009]/value",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "body_site",
+        "name" : "Body site",
+        "localizedName" : "Body site",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0012",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "sv" : "Anatomisk plats",
+          "de" : "Körperstelle",
+          "en" : "Body site"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Identifiering av problemets eller diagnosens anatomiska plats.",
+          "de" : "Identifikation einer einfachen Körperstelle zur Lokalisierung des Problems oder der Diagnose.",
+          "en" : "Identification of a simple body site for the location of the problem or diagnosis."
+        },
+        "annotations" : {
+          "comment" : "Coding of the name of the anatomical location with a terminology is preferred, where possible.\r\nUse this data element to record precoordinated anatomical locations. If the requirements for recording the anatomical location are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the 'Structured anatomical location' SLOT in this archetype. Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a rash in multiple locations but where all of the other attributes are identical. If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. \r\n\r\n"
+        },
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0012]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "6921000",
+            "label" : "right arm",
+            "localizedLabels" : {
+              "sv" : "right arm",
+              "de" : "right arm",
+              "en" : "right arm"
+            }
+          }, {
+            "value" : "80768000",
+            "label" : "left arm",
+            "localizedLabels" : {
+              "sv" : "left arm",
+              "de" : "left arm",
+              "en" : "left arm"
+            }
+          }, {
+            "value" : "62175007",
+            "label" : "right leg",
+            "localizedLabels" : {
+              "sv" : "right leg",
+              "de" : "right leg",
+              "en" : "right leg"
+            }
+          }, {
+            "value" : "32153003",
+            "label" : "left leg",
+            "localizedLabels" : {
+              "sv" : "left leg",
+              "de" : "left leg",
+              "en" : "left leg"
+            }
+          } ],
+          "terminology" : "SNOMED-CT"
+        } ]
+      }, {
+        "id" : "anatomical_location",
+        "name" : "Anatomical location",
+        "localizedName" : "Anatomical location",
+        "rmType" : "CLUSTER",
+        "nodeId" : "openEHR-EHR-CLUSTER.anatomical_location.v1",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "Anatomisk lokalisation",
+          "de" : "Anatomische Lokalisation",
+          "en" : "Anatomical location"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Ett fysiskt ställe på eller i människokroppen.",
+          "de" : "Eine physische Stelle am oder innerhalb des menschlichen Körpers.",
+          "en" : "A physical site on or within the human body."
+        },
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.anatomical_location.v1]",
+        "children" : [ {
+          "id" : "body_site_name",
+          "name" : "Body site name",
+          "localizedName" : "Body site name",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at0001",
+          "min" : 1,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Namn på kroppsställe",
+            "de" : "Name der Körperstelle",
+            "en" : "Body site name"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Identifiering av enskilt fysiskt ställe på eller i människokroppen.",
+            "de" : "Identifikation einer einzelnen physischen Stelle entweder am oder innerhalb des menschlichen Körpers.",
+            "en" : "Identification of a single physical site either on, or within, the human body."
+          },
+          "annotations" : {
+            "comment" : "This data element is the only mandated data point in this archetype and should be used as the primary data point to record an anatomical location with a commonly used name. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. Use the other data elements for laterality, aspect, region and anatomical line to provide more detail.\r\n\r\nThis data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available.\r\n\r\nIf body site name is already identified in the parent archetype, then this data element may be redundant. Alternatively, a use case has been identified where the value may be duplicated into this element to support semantic querying using this archetype, rather than the data element within the parent."
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.anatomical_location.v1]/items[at0001]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "53120007",
+              "label" : "Arm (Upper limb structure)",
+              "localizedLabels" : {
+                "sv" : "arm (övre extremitet, struktur)",
+                "de" : "Arm (Upper limb structure)",
+                "en" : "Arm (Upper limb structure)"
+              }
+            }, {
+              "value" : "61685007",
+              "label" : "Leg (Lower limb structure)",
+              "localizedLabels" : {
+                "sv" : "ben (nedre extremitet, struktur)",
+                "de" : "Leg (Lower limb structure)",
+                "en" : "Leg (Lower limb structure)"
+              }
+            } ],
+            "terminology" : "SNOMED-CT"
+          } ]
+        }, {
+          "id" : "specific_site",
+          "name" : "Specific site",
+          "localizedName" : "Specific site",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0065",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Specifikt ställe",
+            "de" : "Spezifische Körperstelle",
+            "en" : "Specific site"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Ytterligare detalj angiven som ett specifikt område eller en punkt på eller i det identifierade kroppsstället.",
+            "de" : "Zusätzliches Detail unter Verwendung eines bestimmten Bereiches oder eines Punktes auf oder innerhalb der spezifischen Körperstelle.",
+            "en" : "Additional detail using a specific region or a point on, or within, the identified body site."
+          },
+          "annotations" : {
+            "comment" : "Use to increase precision of identification of the body site, if required. For example, the upper right quadrant or McBurney's point on the abdominal wall or interphalangeal joint of the great toe. If the 'Body site name' data element uses pre-coordinated terms that include the specific site, then this data element is redundant."
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.anatomical_location.v1]/items[at0065]/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "laterality",
+          "name" : "Laterality",
+          "localizedName" : "Laterality",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at0002",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Lateralitet",
+            "de" : "Lateralität",
+            "en" : "Laterality"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Den sida av kroppen där det identifierade kroppsstället är lokaliserat.",
+            "de" : "Die Seite des Körpers, an der sich die identifizierte Körperstelle befindet.",
+            "en" : "The side of the body on which the identified  body site is located."
+          },
+          "annotations" : {
+            "comment" : "If the identified body site has no laterality, this data element should not have a value. \r\nIf the 'Body site name' data element uses pre-coordinated terms that include laterality, then this data element is redundant."
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.anatomical_location.v1]/items[at0002]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0003",
+              "label" : "Left",
+              "localizedLabels" : {
+                "sv" : "Vänster",
+                "de" : "Links",
+                "en" : "Left"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Kroppens vänstra sida.",
+                "de" : "Die linke Körperseite.",
+                "en" : "Left side of the body."
+              },
+              "termBindings" : {
+                "SNOMED-CT" : {
+                  "value" : "[SNOMED-CT::7771000]",
+                  "terminologyId" : "SNOMED-CT"
+                }
+              }
+            }, {
+              "value" : "at0004",
+              "label" : "Right",
+              "localizedLabels" : {
+                "sv" : "Höger",
+                "de" : "Rechts",
+                "en" : "Right"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Kroppens högra sida.",
+                "de" : "Die rechte Körperseite.",
+                "en" : "Right side of the body."
+              },
+              "termBindings" : {
+                "SNOMED-CT" : {
+                  "value" : "[SNOMED-CT::24028007]",
+                  "terminologyId" : "SNOMED-CT"
+                }
+              }
+            } ]
+          } ],
+          "termBindings" : {
+            "SNOMED-CT" : {
+              "value" : "[SNOMED-CT::272741003]",
+              "terminologyId" : "SNOMED-CT"
+            }
+          }
+        }, {
+          "id" : "aspect",
+          "name" : "Aspect",
+          "localizedName" : "Aspect",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at0064",
+          "min" : 0,
+          "max" : 2,
+          "localizedNames" : {
+            "sv" : "Del",
+            "de" : "Perspektive",
+            "en" : "Aspect"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Utmärkande detalj hos den specifika delen av det identifierade kroppsstället.",
+            "de" : "Qualifizierende Angabe unter spezifischer Sicht der identifizierten Körperstelle.",
+            "en" : "Qualifying detail about the specific aspect of the identified body site."
+          },
+          "annotations" : {
+            "comment" : "Use to increase precision of identification of the body site, if required. Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described, if required, by allowing for 0..2 occurrences. For example: a lesion may be on the left anterior/lateral (ie anterolateral) chest wall. If the 'Body site name' data element uses pre-coordinated terms that include the aspect, then this data element is redundant."
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.anatomical_location.v1]/items[at0064]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0067",
+              "label" : "Medial",
+              "localizedLabels" : {
+                "sv" : "Medial",
+                "de" : "Medial",
+                "en" : "Medial"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning mot kroppsställets mittlinje.",
+                "de" : "Zur Körpermitte hin orientiert.",
+                "en" : "Towards the midline of the body site."
+              }
+            }, {
+              "value" : "at0068",
+              "label" : "Lateral",
+              "localizedLabels" : {
+                "sv" : "Lateral",
+                "de" : "Lateral",
+                "en" : "Lateral"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning mot kroppsställets sida eller kant.",
+                "de" : "Zur Seite oder zum Rand der Körperstelle.",
+                "en" : "Towards the side, or edge, of the body site."
+              }
+            }, {
+              "value" : "at0069",
+              "label" : "Superior",
+              "localizedLabels" : {
+                "sv" : "Superior",
+                "de" : "Superior",
+                "en" : "Superior"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Ovanför kroppsstället, ofta i betydelsen i riktning mot huvudet.",
+                "de" : "Über der Körpermitte, oft in Richtung des Kopfes.",
+                "en" : "Above the body site, often meaning towards the head."
+              }
+            }, {
+              "value" : "at0070",
+              "label" : "Inferior",
+              "localizedLabels" : {
+                "sv" : "Inferior",
+                "de" : "Inferior",
+                "en" : "Inferior"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Nedanför kroppsstället, ofta i betydelsen i riktning mot fötterna.",
+                "de" : "Unterhalb der Körpermitte, oft in Richtung der Füße.",
+                "en" : "Below the body site, often meaning towards the feet."
+              }
+            }, {
+              "value" : "at0071",
+              "label" : "Anterior",
+              "localizedLabels" : {
+                "sv" : "Främre",
+                "de" : "Anterior",
+                "en" : "Anterior"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Främre delen eller ventrala ytan av kroppsstället.",
+                "de" : "In Richtung der Vorderseite oder der ventralen Oberfläche des Körpers.",
+                "en" : "Towards the front, or ventral surface, of  the body site."
+              }
+            }, {
+              "value" : "at0072",
+              "label" : "Posterior",
+              "localizedLabels" : {
+                "sv" : "Bakre",
+                "de" : "Posterior",
+                "en" : "Posterior"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Bakre delen eller dorsala ytan av kroppsstället.",
+                "de" : "In Richtung Rücken oder Rückseite des Körpers.",
+                "en" : "Towards the back, or dorsal surface, of the body site."
+              }
+            }, {
+              "value" : "at0073",
+              "label" : "Proximal",
+              "localizedLabels" : {
+                "sv" : "Proximal",
+                "de" : "Proximal",
+                "en" : "Proximal"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Mer central eller närmare fastsättningspunkten, vanligtvis en beskrivning av en del av extremitet, finger, tå eller bihang.",
+                "de" : "Zur Körpermitte hin. Beschreibt für gewöhnlich einen Teil eines Gliedmaßes, Fingers oder eines Anhängsels.",
+                "en" : "More central or closer to the point of attachment, and usually describing part of a limb, digit or appendage."
+              }
+            }, {
+              "value" : "at0074",
+              "label" : "Distal",
+              "localizedLabels" : {
+                "sv" : "Distal",
+                "de" : "Distal",
+                "en" : "Distal"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Mer perifert eller längre bort från fastsättningspunkten, vanligtvis en beskrivning av en del av extremitet, finger, tå eller bihang.",
+                "de" : "Mehr periphere oder weiter vom Körpermitte entfernte Stelle. Beschreibt in der Regel einen Teil einer Extremität, eines Fingers/Zehs oder Körperglieds.",
+                "en" : "More peripheral, or further from the point of attachment, and usually describing part of a limb, digit or appendage."
+              }
+            }, {
+              "value" : "at0080",
+              "label" : "Deep",
+              "localizedLabels" : {
+                "sv" : "Djup",
+                "de" : "Tief",
+                "en" : "Deep"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning bort från kroppsställets yta.",
+                "de" : "Entfernt von der Oberfläche der Körperstelle.",
+                "en" : "Away from the surface of the body site."
+              }
+            }, {
+              "value" : "at0081",
+              "label" : "Superficial",
+              "localizedLabels" : {
+                "sv" : "Ytlig",
+                "de" : "Oberflächlich",
+                "en" : "Superficial"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning mot kroppsställets yta.",
+                "de" : "Auf die Oberfläche zu, bezeichnet oberflächlich gelegene Strukturen.",
+                "en" : "Towards the surface of the body site."
+              }
+            }, {
+              "value" : "at0075",
+              "label" : "Palmar",
+              "localizedLabels" : {
+                "sv" : "Palmar",
+                "de" : "Palmar",
+                "en" : "Palmar"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning mot handflatan.",
+                "de" : "In Richtung der Handfläche.",
+                "en" : "Towards the palm of the hand."
+              }
+            }, {
+              "value" : "at0076",
+              "label" : "Plantar",
+              "localizedLabels" : {
+                "sv" : "Plantar",
+                "de" : "Plantar",
+                "en" : "Plantar"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning mot fotsulan.",
+                "de" : "In Richtung der Fußsohle.",
+                "en" : "Towards the sole of the foot."
+              }
+            }, {
+              "value" : "at0082",
+              "label" : "Dorsal",
+              "localizedLabels" : {
+                "sv" : "Dorsal",
+                "de" : "Dorsal",
+                "en" : "Dorsal"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning mot handens baksida eller fotens ovansida. Används som motsats till handflata och fotsula, inte som en synonym till bakre.",
+                "de" : "In Richtung des Handrückens oder des Fußrückens hin gelegen. Als Gegenstück zu Palmar oder Plantar, nicht als Synonym für posterior.",
+                "en" : "Towards the back of the hand or top of the foot. To be used as opposites of palmar or plantar, not as a synonym of posterior."
+              }
+            }, {
+              "value" : "at0077",
+              "label" : "Mid",
+              "localizedLabels" : {
+                "sv" : "I mitten av",
+                "de" : "Mid",
+                "en" : "Mid"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I mitten av kroppsstället.",
+                "de" : "In der Mitte des Körpers.",
+                "en" : "In the middle of the body site."
+              }
+            }, {
+              "value" : "at0078",
+              "label" : "Oral",
+              "localizedLabels" : {
+                "sv" : "Oral",
+                "de" : "Oral",
+                "en" : "Oral"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning mot munnen. Används vanligtvis för att beskriva lokalisation inom matspjälkningssystemet.",
+                "de" : "Den Mund betreffend. Wird üblicherweise zur Beschreibung von Stellen im Verdauungssystem verwendet.",
+                "en" : "Towards the mouth. Usually used to describe locations within the digestive system."
+              }
+            }, {
+              "value" : "at0079",
+              "label" : "Anal",
+              "localizedLabels" : {
+                "sv" : "Anal",
+                "de" : "Anal",
+                "en" : "Anal"
+              },
+              "localizedDescriptions" : {
+                "sv" : "I riktning mot anus. Används vanligtvis för att beskriva lokalisation inom matspjälkningssystemet.",
+                "de" : "Zum Anus hin. Wird üblicherweise zur Beschreibung von Stellen im Verdauungssystem verwendet.",
+                "en" : "Towards the anus. Usually used to describe locations within the digestive system."
+              }
+            } ],
+            "listOpen" : true
+          }, {
+            "suffix" : "other",
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "anatomical_line",
+          "name" : "Anatomical Line",
+          "localizedName" : "Anatomical Line",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at0055",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Anatomisk linje",
+            "de" : "Anatomische Linie",
+            "en" : "Anatomical Line"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Ytterligare detalj där teoretiska linjer dragits genom anatomiska strukturer för att ge en fast referenspunkt på människokroppen.",
+            "de" : "Zusätzliches Detail unter Verwendung theoretischer Linien, die durch anatomische Strukturen erweitert werden können, um einen einheitlichen Bezugspunkt auf dem menschlichen Körper zu erhalten.",
+            "en" : "Additional detail using theoretical lines drawn through anatomical structures used to provide a consistent reference point on the human body."
+          },
+          "annotations" : {
+            "comment" : "Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line. If the 'Body site name' data element uses pre-coordinated terms that include anatomical line, then this data element is redundant."
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.anatomical_location.v1]/items[at0055]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0062",
+              "label" : "Midline",
+              "localizedLabels" : {
+                "sv" : "Mittlinje",
+                "de" : "Mittellinie",
+                "en" : "Midline"
+              },
+              "localizedDescriptions" : {
+                "sv" : "En vertikal linje som delar in kroppen i vänster och höger halva. Den går genom huvud, ryggmärg och navel. Alternativt åsyftas en linje som delar in en kroppsdel i två lika stora delar, exempelvis en tå eller ett finger.",
+                "de" : "Vertikal verlaufende Linie, die den Körper in eine linke und rechte Seite teilt und durch den Kopf, das Rückenmark und den Nabel verläuft. Alternativ kann es sich auf eine Linie beziehen, die ein Körperteil in zwei gleiche Teile teilt, zum Beispiel einen Zeh/Finger.",
+                "en" : "Line running vertically which divides the body into left and right portions, passing through the head, spinal cord, and umbilicus. Alternatively it can refer to a line dividing a body part into two equal portions, for example a digit."
+              }
+            }, {
+              "value" : "at0056",
+              "label" : "Midaxillary line",
+              "localizedLabels" : {
+                "sv" : "Mellersta axillarlinjen",
+                "de" : "mittlere Axillarlinie",
+                "en" : "Midaxillary line"
+              },
+              "localizedDescriptions" : {
+                "sv" : "En vertikal linje som går över kroppsytan genom axillspetsen.",
+                "de" : "Linie, die senkrecht zur Körperoberfläche verläuft und durch den Scheitelpunkt der Achselhöhle geht.",
+                "en" : "Line running vertically down the surface of the body, passing through the apex of the axilla."
+              }
+            }, {
+              "value" : "at0057",
+              "label" : "Anterior axillary line",
+              "localizedLabels" : {
+                "sv" : "Främre axillarlinjen",
+                "de" : "vordere Axillarlinie",
+                "en" : "Anterior axillary line"
+              },
+              "localizedDescriptions" : {
+                "sv" : "*Line running vertically down the surface of the body, passing through the anterior axillary skinfold.(en)",
+                "de" : "Die Linie verläuft senkrecht über die Körperoberfläche und verläuft durch die vordere Hautfalte der Achselhöhle.",
+                "en" : "Line running vertically down the surface of the body, passing through the anterior axillary skinfold."
+              }
+            }, {
+              "value" : "at0058",
+              "label" : "Posterior axillary line",
+              "localizedLabels" : {
+                "sv" : "Bakre axillarlinjen",
+                "de" : "hintere Axillarlinie",
+                "en" : "Posterior axillary line"
+              },
+              "localizedDescriptions" : {
+                "sv" : "*Line running vertically down the surface of the body, passing through the posterior axillary skinfold.(en)",
+                "de" : "Linie, die senkrecht über die Körperoberfläche verläuft und durch die hintere Achselhaut führt.",
+                "en" : "Line running vertically down the surface of the body, passing through the posterior axillary skinfold."
+              }
+            }, {
+              "value" : "at0059",
+              "label" : "Mid-clavicular line",
+              "localizedLabels" : {
+                "sv" : "Mellersta klavikulärlinjen",
+                "de" : "Medioklavikularlinie",
+                "en" : "Mid-clavicular line"
+              },
+              "localizedDescriptions" : {
+                "sv" : "*Line running vertically down the surface of the body, parallel to the midline and passing through the midpoint of the clavicle.(en)",
+                "de" : "Linie, die senkrecht über die Körperoberfläche verläuft, parallel zur Mittellinie und durch den Mittelpunkt der Klavikula führt.",
+                "en" : "Line running vertically down the surface of the body, parallel to the midline and passing through the midpoint of the clavicle."
+              }
+            }, {
+              "value" : "at0060",
+              "label" : "Mid-pupillary line",
+              "localizedLabels" : {
+                "sv" : "Mellersta pupillinjen",
+                "de" : "Mittelere Pupillarlinie",
+                "en" : "Mid-pupillary line"
+              },
+              "localizedDescriptions" : {
+                "sv" : "*Line running vertically down the face through the midpoint of the pupil when looking directly forward.(en)",
+                "de" : "Die Linie verläuft vertikal durch den Mittelpunkt der Pupille, wenn man direkt nach vorne schaut.",
+                "en" : "Line running vertically down the face through the midpoint of the pupil when looking directly forward."
+              }
+            }, {
+              "value" : "at0063",
+              "label" : "Mid-scapular line",
+              "localizedLabels" : {
+                "sv" : "Mellersta skapularlinjen",
+                "de" : "Mittlere Skapularlinie",
+                "en" : "Mid-scapular line"
+              },
+              "localizedDescriptions" : {
+                "sv" : "*Line running vertically down the posterior surface of the body, parallel to the midline and passing through the inferior point of the scapula.(en)",
+                "de" : "Die Linie verläuft senkrecht über die hintere Körperoberfläche, parallel zur Mittellinie und verläuft durch den unteren Punkt des Schulterblattes.",
+                "en" : "Line running vertically down the posterior surface of the body, parallel to the midline and passing through the inferior point of the scapula."
+              }
+            } ],
+            "listOpen" : true
+          }, {
+            "suffix" : "other",
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "description",
+          "name" : "Description",
+          "localizedName" : "Description",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0023",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Beskrivning",
+            "de" : "Beschreibung",
+            "en" : "Description"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*Narrative description that can be used to further refine and support the 'Body site name'.(en)",
+            "de" : "Aussagekräftige Erläuterung, die verwendet werden kann, um die \"Körperstelle\" weiter zu verfeinern.",
+            "en" : "Narrative description that can be used to further refine and support the 'Body site name'."
+          },
+          "annotations" : {
+            "comment" : "For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area."
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.anatomical_location.v1]/items[at0023]/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ]
+        } ]
+      }, {
+        "id" : "date_time_of_onset",
+        "name" : "Date/time of onset",
+        "localizedName" : "Date/time of onset",
+        "rmType" : "DV_DATE_TIME",
+        "nodeId" : "at0077",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "Datum och tid för skada",
+          "de" : "Datum/ Zeitpunkt des Auftretens/ der Erstdiagnose",
+          "en" : "Date/time of onset"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Uppskattat eller reellt datum och tid när problemets eller diagnosens tecken eller symtom först observerades.",
+          "de" : "Geschätzte oder exakte Zeit (bzw. Datum), zu der die Krankheitsanzeichen oder Symptome zum ersten mal beobachtet wurden.",
+          "en" : "Estimated or actual date/time that signs or symptoms of the problem/diagnosis were first observed."
+        },
+        "annotations" : {
+          "comment" : "Data captured/imported as \"Age at onset\" should be converted to a date using the subject's date of birth."
+        },
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0077]/value",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ]
+      }, {
+        "id" : "sport_event",
+        "name" : "Sport event",
+        "localizedName" : "Sport event",
+        "rmType" : "CLUSTER",
+        "nodeId" : "openEHR-EHR-CLUSTER.sport_event_details.v0",
+        "min" : 0,
+        "max" : 1,
+        "dependsOn" : [ "date_time_of_onset", "clinical_description", "injury", "body_site", "anatomical_location" ],
+        "localizedNames" : {
+          "sv" : "Sportevenemang",
+          "de" : "Sportveranstaltung",
+          "en" : "Sport event"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Detaljer om ett motionslopp (vanligtvis återkommande stort sport-event där \"vanligt folk\" kan deltaga).",
+          "de" : "Details zu einer Freizeit-Sportveranstaltung, in der Regel ein wiederkehrendes großes Event, das für die Allgemeinheit zugänglich ist.",
+          "en" : "Details about a recreational sports event, usually a recurring major event open to the general public."
+        },
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]",
+        "children" : [ {
+          "id" : "event_name",
+          "name" : "Event name",
+          "localizedName" : "Event name",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0001",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Evenemangets namn",
+            "de" : "Name der Veranstaltung",
+            "en" : "Event name"
+          },
+          "localizedDescriptions" : {
+            "sv" : "",
+            "de" : "",
+            "en" : ""
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0001]/value",
+          "inputs" : [ {
+            "type" : "TEXT",
+            "list" : [ {
+              "value" : "Vätternrundan",
+              "label" : "Vätternrundan"
+            }, {
+              "value" : "Halvvättern 150 km",
+              "label" : "Halvvättern 150 km"
+            }, {
+              "value" : "Tjejvättern 100 km",
+              "label" : "Tjejvättern 100 km"
+            }, {
+              "value" : "Vätternrundan 100 km",
+              "label" : "Vätternrundan 100 km"
+            }, {
+              "value" : "MTB-Vättern",
+              "label" : "MTB-Vättern"
+            }, {
+              "value" : "Minivättern",
+              "label" : "Minivättern"
+            } ],
+            "listOpen" : false
+          } ]
+        }, {
+          "id" : "type_of_exercise_sport",
+          "name" : "Type of exercise/sport",
+          "localizedName" : "Type of exercise/sport",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at0030",
+          "min" : 1,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Typ av motion/sport",
+            "de" : "Art der Bewegung/Sportart",
+            "en" : "Type of exercise/sport"
+          },
+          "localizedDescriptions" : {
+            "sv" : "",
+            "de" : "",
+            "en" : ""
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0030]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0031",
+              "label" : "Cycling",
+              "localizedLabels" : {
+                "sv" : "Cykling",
+                "de" : "Radfahren",
+                "en" : "Cycling"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              }
+            }, {
+              "value" : "at0032",
+              "label" : "Running",
+              "localizedLabels" : {
+                "sv" : "Löpning",
+                "de" : "Laufen",
+                "en" : "Running"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              }
+            }, {
+              "value" : "at0033",
+              "label" : "Skiing",
+              "localizedLabels" : {
+                "sv" : "Skidåkning",
+                "de" : "Skifahren",
+                "en" : "Skiing"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              }
+            }, {
+              "value" : "at0034",
+              "label" : "Swimming",
+              "localizedLabels" : {
+                "sv" : "Simning",
+                "de" : "Schwimmen",
+                "en" : "Swimming"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              }
+            } ]
+          } ]
+        }, {
+          "id" : "training_experience",
+          "name" : "Training experience",
+          "localizedName" : "Training experience",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at0003",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Träningsvana",
+            "de" : "Trainingserfahrung",
+            "en" : "Training experience"
+          },
+          "localizedDescriptions" : {
+            "sv" : "",
+            "de" : "",
+            "en" : ""
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0003]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0016",
+              "label" : "Beginner",
+              "localizedLabels" : {
+                "sv" : "Nybörjare",
+                "de" : "Anfänger",
+                "en" : "Beginner"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              }
+            }, {
+              "value" : "at0017",
+              "label" : "Recreational athlete",
+              "localizedLabels" : {
+                "sv" : "Motionsidrottare",
+                "de" : "Freizeitsportler",
+                "en" : "Recreational athlete"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              }
+            }, {
+              "value" : "at0018",
+              "label" : "Elite level",
+              "localizedLabels" : {
+                "sv" : "Elitnivå",
+                "de" : "Eliteniveau",
+                "en" : "Elite level"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              }
+            } ]
+          } ]
+        }, {
+          "id" : "number_of_previous_participations_in_this_event",
+          "name" : "Number of previous participations in this event",
+          "localizedName" : "Number of previous participations in this event",
+          "rmType" : "DV_COUNT",
+          "nodeId" : "at0004",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Antal tidigare deltaganden i detta evenemang",
+            "de" : "Anzahl früherer Teilnahmen an dieser Veranstaltung",
+            "en" : "Number of previous participations in this event"
+          },
+          "localizedDescriptions" : {
+            "sv" : "",
+            "de" : "",
+            "en" : ""
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0004]/value",
+          "inputs" : [ {
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0
+              }
+            }
+          } ]
+        }, {
+          "id" : "time_after_start",
+          "name" : "Time after start",
+          "localizedName" : "Time after start",
+          "rmType" : "DV_DURATION",
+          "nodeId" : "at0005",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Tid efter start",
+            "de" : "Zeit nach Start",
+            "en" : "Time after start"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Relativ tid sedan deltagaren startade i evenemanget, för ststistiska syften.",
+            "de" : "Relative Zeit seit dem Start des Teilnehmers bei der Veranstaltung, zu statistischen Zwecken.",
+            "en" : "Relative time since the participant started the event, for statistical purposes."
+          },
+          "annotations" : {
+            "comment" : "Absolute time (clock time) is not recorded here but often elsewhere, for example in an injury reporting form."
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0005]/value",
+          "inputs" : [ {
+            "suffix" : "year",
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0
+              }
+            }
+          }, {
+            "suffix" : "month",
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0
+              }
+            }
+          }, {
+            "suffix" : "day",
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0
+              }
+            }
+          }, {
+            "suffix" : "week",
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0
+              }
+            }
+          }, {
+            "suffix" : "hour",
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0
+              }
+            }
+          }, {
+            "suffix" : "minute",
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0
+              }
+            }
+          }, {
+            "suffix" : "second",
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0
+              }
+            }
+          } ]
+        }, {
+          "id" : "location",
+          "name" : "Location",
+          "localizedName" : "Location",
+          "rmType" : "CLUSTER",
+          "nodeId" : "at0006",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Plats",
+            "de" : "Ort",
+            "en" : "Location"
+          },
+          "localizedDescriptions" : {
+            "sv" : "",
+            "de" : "",
+            "en" : ""
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0006]",
+          "children" : [ {
+            "id" : "distance_from_start",
+            "name" : "Distance from start",
+            "localizedName" : "Distance from start",
+            "rmType" : "DV_QUANTITY",
+            "nodeId" : "at0007",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Sträcka från Start",
+              "de" : "Strecke ab Start",
+              "en" : "Distance from start"
+            },
+            "localizedDescriptions" : {
+              "sv" : "",
+              "de" : "",
+              "en" : ""
+            },
+            "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0006]/items[at0007]/value",
+            "inputs" : [ {
+              "suffix" : "magnitude",
+              "type" : "DECIMAL"
+            }, {
+              "suffix" : "unit",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "km",
+                "label" : "km"
+              }, {
+                "value" : "m",
+                "label" : "m"
+              }, {
+                "value" : "[mi_i]",
+                "label" : "[mi_i]",
+                "localizedLabels" : {
+                  "sv" : "mile",
+                  "de" : "mile",
+                  "en" : "mile"
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "address_or_description",
+            "name" : "Address or description",
+            "localizedName" : "Address or description",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "at0008",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Adress eller beskrivning",
+              "de" : "Adresse oder Beschreibung",
+              "en" : "Address or description"
+            },
+            "localizedDescriptions" : {
+              "sv" : "",
+              "de" : "",
+              "en" : ""
+            },
+            "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0006]/items[at0008]/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          }, {
+            "id" : "position",
+            "name" : "Position",
+            "localizedName" : "Position",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0009",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Position",
+              "de" : "Position",
+              "en" : "Position"
+            },
+            "localizedDescriptions" : {
+              "sv" : "",
+              "de" : "",
+              "en" : ""
+            },
+            "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0006]/items[at0009]",
+            "children" : [ {
+              "id" : "longitude",
+              "name" : "Longitude",
+              "localizedName" : "Longitude",
+              "rmType" : "DV_QUANTITY",
+              "nodeId" : "at0010",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Longitud",
+                "de" : "Längengrad",
+                "en" : "Longitude"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0006]/items[at0009]/items[at0010]/value",
+              "inputs" : [ {
+                "suffix" : "magnitude",
+                "type" : "DECIMAL"
+              }, {
+                "suffix" : "unit",
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "deg",
+                  "label" : "deg",
+                  "localizedLabels" : {
+                    "sv" : "°",
+                    "de" : "°",
+                    "en" : "°"
+                  }
+                } ]
+              } ]
+            }, {
+              "id" : "latitude",
+              "name" : "Latitude",
+              "localizedName" : "Latitude",
+              "rmType" : "DV_QUANTITY",
+              "nodeId" : "at0011",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Latitud",
+                "de" : "Breitengrad",
+                "en" : "Latitude"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0006]/items[at0009]/items[at0011]/value",
+              "inputs" : [ {
+                "suffix" : "magnitude",
+                "type" : "DECIMAL"
+              }, {
+                "suffix" : "unit",
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "deg",
+                  "label" : "deg",
+                  "localizedLabels" : {
+                    "sv" : "°",
+                    "de" : "°",
+                    "en" : "°"
+                  }
+                } ]
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "protective_equipment_worn_on",
+          "name" : "Protective equipment worn on",
+          "localizedName" : "Protective equipment worn on",
+          "rmType" : "CLUSTER",
+          "nodeId" : "at0022",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Skyddsutrustning använd på",
+            "de" : "Schutzausrüstung an Körperteil",
+            "en" : "Protective equipment worn on"
+          },
+          "localizedDescriptions" : {
+            "sv" : "",
+            "de" : "",
+            "en" : ""
+          },
+          "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]",
+          "children" : [ {
+            "id" : "head",
+            "name" : "Head",
+            "localizedName" : "Head",
+            "rmType" : "ELEMENT",
+            "nodeId" : "at0026",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Huvud",
+              "de" : "Kopf",
+              "en" : "Head"
+            },
+            "localizedDescriptions" : {
+              "sv" : "",
+              "de" : "",
+              "en" : ""
+            },
+            "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0026]",
+            "children" : [ {
+              "id" : "boolean_value",
+              "localizedName" : "Head",
+              "rmType" : "DV_BOOLEAN",
+              "nodeId" : "",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Huvud",
+                "de" : "Kopf",
+                "en" : "Head"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0026]/value",
+              "inputs" : [ {
+                "type" : "BOOLEAN"
+              } ]
+            }, {
+              "id" : "coded_text_value",
+              "localizedName" : "Head",
+              "rmType" : "DV_CODED_TEXT",
+              "nodeId" : "",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Huvud",
+                "de" : "Kopf",
+                "en" : "Head"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0026]/value",
+              "inputs" : [ {
+                "suffix" : "code",
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0036",
+                  "label" : "No protection or headwear",
+                  "localizedLabels" : {
+                    "sv" : "Inget skydd eller huvudbonad",
+                    "de" : "Kein Schutz oder keine Kopfbedeckung",
+                    "en" : "No protection or headwear"
+                  },
+                  "localizedDescriptions" : {
+                    "sv" : "",
+                    "de" : "",
+                    "en" : ""
+                  }
+                }, {
+                  "value" : "at0037",
+                  "label" : "Helmet",
+                  "localizedLabels" : {
+                    "sv" : "Hjälm",
+                    "de" : "Helm",
+                    "en" : "Helmet"
+                  },
+                  "localizedDescriptions" : {
+                    "sv" : "",
+                    "de" : "",
+                    "en" : ""
+                  }
+                }, {
+                  "value" : "at0038",
+                  "label" : "Cap",
+                  "localizedLabels" : {
+                    "sv" : "Mössa",
+                    "de" : "Mütze",
+                    "en" : "Cap"
+                  },
+                  "localizedDescriptions" : {
+                    "sv" : "",
+                    "de" : "",
+                    "en" : ""
+                  }
+                }, {
+                  "value" : "at0039",
+                  "label" : "Hat",
+                  "localizedLabels" : {
+                    "sv" : "Hatt",
+                    "de" : "Hut",
+                    "en" : "Hat"
+                  },
+                  "localizedDescriptions" : {
+                    "sv" : "",
+                    "de" : "",
+                    "en" : ""
+                  }
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "feet",
+            "name" : "Feet",
+            "localizedName" : "Feet",
+            "rmType" : "ELEMENT",
+            "nodeId" : "at0040",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Fötter",
+              "de" : "Füße",
+              "en" : "Feet"
+            },
+            "localizedDescriptions" : {
+              "sv" : "",
+              "de" : "",
+              "en" : ""
+            },
+            "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0040]",
+            "children" : [ {
+              "id" : "coded_text_value",
+              "localizedName" : "Feet",
+              "rmType" : "DV_CODED_TEXT",
+              "nodeId" : "",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Fötter",
+                "de" : "Füße",
+                "en" : "Feet"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0040]/value",
+              "inputs" : [ {
+                "suffix" : "code",
+                "type" : "TEXT"
+              }, {
+                "suffix" : "value",
+                "type" : "TEXT"
+              } ]
+            }, {
+              "id" : "boolean_value",
+              "localizedName" : "Feet",
+              "rmType" : "DV_BOOLEAN",
+              "nodeId" : "",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Fötter",
+                "de" : "Füße",
+                "en" : "Feet"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0040]/value",
+              "inputs" : [ {
+                "type" : "BOOLEAN"
+              } ]
+            } ]
+          }, {
+            "id" : "hands",
+            "name" : "Hands",
+            "localizedName" : "Hands",
+            "rmType" : "ELEMENT",
+            "nodeId" : "at0027",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Händer",
+              "de" : "Hände",
+              "en" : "Hands"
+            },
+            "localizedDescriptions" : {
+              "sv" : "",
+              "de" : "",
+              "en" : ""
+            },
+            "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0027]",
+            "children" : [ {
+              "id" : "coded_text_value",
+              "localizedName" : "Hands",
+              "rmType" : "DV_CODED_TEXT",
+              "nodeId" : "",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Händer",
+                "de" : "Hände",
+                "en" : "Hands"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0027]/value",
+              "inputs" : [ {
+                "suffix" : "code",
+                "type" : "TEXT"
+              }, {
+                "suffix" : "value",
+                "type" : "TEXT"
+              } ]
+            }, {
+              "id" : "boolean_value",
+              "localizedName" : "Hands",
+              "rmType" : "DV_BOOLEAN",
+              "nodeId" : "",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Händer",
+                "de" : "Hände",
+                "en" : "Hands"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0027]/value",
+              "inputs" : [ {
+                "type" : "BOOLEAN"
+              } ]
+            } ]
+          }, {
+            "id" : "joints",
+            "name" : "Joints",
+            "localizedName" : "Joints",
+            "rmType" : "ELEMENT",
+            "nodeId" : "at0028",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Leder",
+              "de" : "Gelenke",
+              "en" : "Joints"
+            },
+            "localizedDescriptions" : {
+              "sv" : "",
+              "de" : "",
+              "en" : ""
+            },
+            "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0028]",
+            "children" : [ {
+              "id" : "coded_text_value",
+              "localizedName" : "Joints",
+              "rmType" : "DV_CODED_TEXT",
+              "nodeId" : "",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Leder",
+                "de" : "Gelenke",
+                "en" : "Joints"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0028]/value",
+              "inputs" : [ {
+                "suffix" : "code",
+                "type" : "TEXT"
+              }, {
+                "suffix" : "value",
+                "type" : "TEXT"
+              } ]
+            }, {
+              "id" : "boolean_value",
+              "localizedName" : "Joints",
+              "rmType" : "DV_BOOLEAN",
+              "nodeId" : "",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Leder",
+                "de" : "Gelenke",
+                "en" : "Joints"
+              },
+              "localizedDescriptions" : {
+                "sv" : "",
+                "de" : "",
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/protocol[at0032]/items[openEHR-EHR-CLUSTER.sport_event_details.v0]/items[at0022]/items[at0028]/value",
+              "inputs" : [ {
+                "type" : "BOOLEAN"
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "id" : "language",
+        "name" : "Language",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/language",
+        "inContext" : true
+      }, {
+        "id" : "encoding",
+        "name" : "Encoding",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/encoding",
+        "inContext" : true
+      }, {
+        "id" : "subject",
+        "name" : "Subject",
+        "rmType" : "PARTY_PROXY",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/subject",
+        "inputs" : [ {
+          "suffix" : "id",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "id_scheme",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "id_namespace",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "name",
+          "type" : "TEXT"
+        } ],
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "vital_signs",
+      "name" : "Vital signs",
+      "localizedName" : "Vital signs",
+      "rmType" : "SECTION",
+      "nodeId" : "openEHR-EHR-SECTION.adhoc.v1",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "sv" : "Vitalparametrar",
+        "de" : "Ad hoc Überschrift",
+        "en" : "Vital signs"
+      },
+      "localizedDescriptions" : {
+        "sv" : "En allmän avsnittsrubrik som döps om i en openEHR-mall för att passa in i en specifik klinisk kontext.",
+        "de" : "Eine generische Abschnittsüberschrift eines Templates, welche entsprechend dem spezifischen klinischen Kontext umbenannt werden sollte.",
+        "en" : "A generic section header which should be renamed in a template to suit a specific clinical context."
+      },
+      "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']",
+      "children" : [ {
+        "id" : "pulse_oximetry",
+        "name" : "Pulse oximetry",
+        "localizedName" : "Pulse oximetry",
+        "rmType" : "OBSERVATION",
+        "nodeId" : "openEHR-EHR-OBSERVATION.pulse_oximetry.v1",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "Pulsoximetri",
+          "de" : "Pulsoxymetrie",
+          "en" : "Pulse oximetry"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Syremättnad i blodet och relaterade mätningar, uppmätta med pulsoximetri eller CO-oximetri.",
+          "de" : "Blutsauerstoff und verwandte Messungen, die mittels Pulsoxymetrie oder Puls-CO-Oximetrie gemessen wurden.",
+          "en" : "Blood oxygen and related measurements, measured by pulse oximetry or pulse CO-oximetry."
+        },
+        "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]",
+        "children" : [ {
+          "id" : "any_event",
+          "name" : "Any event",
+          "localizedName" : "Any event",
+          "rmType" : "EVENT",
+          "nodeId" : "at0002",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Ospecificerad händelse",
+            "de" : "Beliebiges Ereignis",
+            "en" : "Any event"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Ospecificerad händelse\r\n\r\nOspecificerad standardhändelse vid en tidpunkt eller inom ett tidsintervall som explicit kan definieras i en mall eller genereras automatiskt av vissa IT-system.",
+            "de" : "Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann.",
+            "en" : "Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]",
+          "children" : [ {
+            "id" : "spo",
+            "name" : "SpO₂",
+            "localizedName" : "SpO₂",
+            "rmType" : "DV_PROPORTION",
+            "nodeId" : "at0006",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "SpO₂",
+              "de" : "SpO₂",
+              "en" : "SpO₂"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Syremättnad i perifert blod uppmätt genom pulsoximetri.",
+              "de" : "Die Sättigung des Sauerstoffs im peripheren Blut, mittels Pulsoxymetrie gemessen.",
+              "en" : "The saturation of oxygen in the peripheral blood, measured via pulse oximetry."
+            },
+            "annotations" : {
+              "comment" : "SpO₂ is defined as the percentage of oxyhaemoglobin (HbO₂) to the total concentration of haemoglobin (HbO₂ + deoxyhaemoglobin) in peripheral blood."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0006]/value",
+            "proportionTypes" : [ "percent" ],
+            "inputs" : [ {
+              "suffix" : "numerator",
+              "type" : "DECIMAL",
+              "validation" : {
+                "range" : {
+                  "minOp" : ">=",
+                  "min" : 0.0,
+                  "maxOp" : "<=",
+                  "max" : 100.0
+                }
+              }
+            }, {
+              "suffix" : "denominator",
+              "type" : "DECIMAL",
+              "validation" : {
+                "range" : {
+                  "minOp" : ">=",
+                  "min" : 100.0,
+                  "maxOp" : "<=",
+                  "max" : 100.0
+                }
+              }
+            } ],
+            "termBindings" : {
+              "SNOMED-CT" : {
+                "value" : "[SNOMED-CT::431314004]",
+                "terminologyId" : "SNOMED-CT"
+              },
+              "LOINC" : {
+                "value" : "[LOINC::59408-5]",
+                "terminologyId" : "LOINC"
+              }
+            }
+          }, {
+            "id" : "inspired_oxygen",
+            "name" : "Inspired oxygen",
+            "localizedName" : "Inspired oxygen",
+            "rmType" : "CLUSTER",
+            "nodeId" : "openEHR-EHR-CLUSTER.inspired_oxygen.v1",
+            "min" : 0,
+            "max" : 1,
+            "dependsOn" : [ "spo" ],
+            "localizedNames" : {
+              "sv" : "Inandad syrgas",
+              "de" : "Eingeatmeter Sauerstoff",
+              "en" : "Inspired oxygen"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Mängden syre som ges eller ordineras till patienten, angivet som andel, procent, eller indirekt som syrgasflöde.",
+              "de" : "Die Sauerstoffmenge, die dem Patienten als Fraktion, als Prozentsatz oder indirekt als Flussrate verabreicht wird oder verabreicht werden soll.\r\n\r\n",
+              "en" : "The amount of oxygen being delivered, or to be delivered, to the patient given as a fraction, percentage or indirectly as a flow rate."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/state[at0014]/items[openEHR-EHR-CLUSTER.inspired_oxygen.v1]",
+            "children" : [ {
+              "id" : "flow_rate",
+              "name" : "Flow rate",
+              "localizedName" : "Flow rate",
+              "rmType" : "DV_QUANTITY",
+              "nodeId" : "at0051",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Syrgasflöde",
+                "de" : "Flussrate",
+                "en" : "Flow rate"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syrgasflöde (flödeshastighet) som ges till en individ.",
+                "de" : "Sauerstoffflussrate, die einer Person gegeben wird.",
+                "en" : "Oxygen flow rate given to an individual."
+              },
+              "annotations" : {
+                "comment" : "For example '5 l/min'."
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/state[at0014]/items[openEHR-EHR-CLUSTER.inspired_oxygen.v1]/items[at0051]/value",
+              "inputs" : [ {
+                "suffix" : "magnitude",
+                "type" : "DECIMAL"
+              }, {
+                "suffix" : "unit",
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "ml/min",
+                  "label" : "ml/min",
+                  "validation" : {
+                    "range" : {
+                      "minOp" : ">=",
+                      "min" : 0.0,
+                      "maxOp" : "<=",
+                      "max" : 50000.0
+                    },
+                    "precision" : {
+                      "minOp" : ">=",
+                      "min" : 2,
+                      "maxOp" : "<=",
+                      "max" : 2
+                    }
+                  }
+                }, {
+                  "value" : "l/min",
+                  "label" : "l/min",
+                  "validation" : {
+                    "range" : {
+                      "minOp" : ">=",
+                      "min" : 0.0,
+                      "maxOp" : "<=",
+                      "max" : 50.0
+                    },
+                    "precision" : {
+                      "minOp" : ">=",
+                      "min" : 2,
+                      "maxOp" : "<=",
+                      "max" : 2
+                    }
+                  }
+                } ]
+              } ]
+            }, {
+              "id" : "on_air",
+              "name" : "On air",
+              "localizedName" : "On air",
+              "rmType" : "DV_BOOLEAN",
+              "nodeId" : "at0057",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "På luft",
+                "de" : "On air",
+                "en" : "On air"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Patienten andas vanlig luft, motsvarande 21% O₂ eller 0.21 FiO₂ eller syrgasflöde 0 liter per minut",
+                "de" : "Der Patient erhält Luft, entsprechend 21% O₂ oder 0,21 FiO₂ und eine Sauerstoff-Flussrate von 0 Liter pro Minute.",
+                "en" : "The patient is receiving air, equivalent to 21% O₂ or 0.21 FiO₂ and an oxygen flow rate of 0 litres per minute."
+              },
+              "annotations" : {
+                "comment" : "Where 'On air' is set to true, Flow rate, FiO₂ and Percent O₂ should not be recorded. Conversely 'On air' should be omitted if Flow rate, FiO₂ or Percent O₂ are recorded."
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/state[at0014]/items[openEHR-EHR-CLUSTER.inspired_oxygen.v1]/items[at0057]/value",
+              "inputs" : [ {
+                "type" : "BOOLEAN"
+              } ]
+            } ]
+          }, {
+            "id" : "time",
+            "name" : "Time",
+            "rmType" : "DV_DATE_TIME",
+            "min" : 1,
+            "max" : 1,
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/data[at0001]/events[at0002]/time",
+            "inputs" : [ {
+              "type" : "DATETIME"
+            } ],
+            "inContext" : true
+          } ]
+        }, {
+          "id" : "sensor_site",
+          "name" : "Sensor site",
+          "localizedName" : "Sensor site",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0009",
+          "min" : 0,
+          "max" : 1,
+          "dependsOn" : [ "any_event" ],
+          "localizedNames" : {
+            "sv" : "Mätplats",
+            "de" : "Sensor Stelle",
+            "en" : "Sensor site"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Plats på kroppen där sensorn satt under mätningen",
+            "de" : "Die Stelle des Messsensors.",
+            "en" : "The site of the measurement sensor."
+          },
+          "annotations" : {
+            "comment" : "For example: Right index finger, left earlobe. Coding with a terminology is preferred, if possible."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/protocol[at0007]/items[at0009]/value",
+          "inputs" : [ {
+            "type" : "TEXT"
+          } ],
+          "termBindings" : {
+            "LOINC" : {
+              "value" : "[LOINC::20081-6]",
+              "terminologyId" : "LOINC"
+            }
+          }
+        }, {
+          "id" : "language",
+          "name" : "Language",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/language",
+          "inContext" : true
+        }, {
+          "id" : "encoding",
+          "name" : "Encoding",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/encoding",
+          "inContext" : true
+        }, {
+          "id" : "subject",
+          "name" : "Subject",
+          "rmType" : "PARTY_PROXY",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse_oximetry.v1]/subject",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_scheme",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_namespace",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "name",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      }, {
+        "id" : "respiration",
+        "name" : "Respiration",
+        "localizedName" : "Respiration",
+        "rmType" : "OBSERVATION",
+        "nodeId" : "openEHR-EHR-OBSERVATION.respiration.v2",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "Andning",
+          "de" : "Atemfrequenz",
+          "en" : "Respiration"
+        },
+        "localizedDescriptions" : {
+          "sv" : "De observerade egenskaperna i spontanandning.",
+          "de" : "Die Charakteristiken der Spontanatmung einer Person.",
+          "en" : "The characteristics of spontaneous breathing by an individual."
+        },
+        "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]",
+        "children" : [ {
+          "id" : "any_event",
+          "name" : "Any event",
+          "localizedName" : "Any event",
+          "rmType" : "EVENT",
+          "nodeId" : "at0002",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Ospecificerad händelse",
+            "de" : "Beliebiges Ereignis",
+            "en" : "Any event"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Ospecificerad standardhändelse vid en tidpunkt eller inom ett tidsintervall som explicit kan definieras i en mall eller genereras automatiskt av vissa IT-system.",
+            "de" : "Standardmäßiger, nicht näher beschriebener Zeitpunkt oder Intervall Ereignis welches in einem Template oder bei der Anwendung genauer definiert werden kann.",
+            "en" : "Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]",
+          "children" : [ {
+            "id" : "presence",
+            "name" : "Presence",
+            "localizedName" : "Presence",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at0062",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Förekomst",
+              "de" : "Präsenz",
+              "en" : "Presence"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Observation av spontanandning.",
+              "de" : "Die Beobachtung der Spontanatmung.",
+              "en" : "Observation of spontaneous respiration."
+            },
+            "annotations" : {
+              "comment" : "This data element may be useful in extreme situations where a formal measurement of respiration rate is not possible. For example: a subject is unconscious and distant to the observer, such as trapped in a car or has fallen down a cliff. Presence of respiration can be implied if the 'Rate' >0 breaths/min."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0062]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0063",
+                "label" : "Present",
+                "localizedLabels" : {
+                  "sv" : "Förekommer",
+                  "de" : "Vorhanden",
+                  "en" : "Present"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Andningsrörelser observeras.",
+                  "de" : "Es werden die Atmungsbewegungen beobachtet.",
+                  "en" : "Respiratory movements are observed."
+                }
+              }, {
+                "value" : "at0064",
+                "label" : "Not detected",
+                "localizedLabels" : {
+                  "sv" : "Ej möjlig att upptäcka",
+                  "de" : "Nicht nachgewiesen",
+                  "en" : "Not detected"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Andningsrörelser kan inte upptäckas genom observation.",
+                  "de" : "Bei der Beobachtung werden keine Atembewegungen festgestellt.",
+                  "en" : "Respiratory movements are not detected on observation."
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "rate",
+            "name" : "Rate",
+            "localizedName" : "Rate",
+            "rmType" : "DV_QUANTITY",
+            "nodeId" : "at0004",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Frekvens",
+              "de" : "Messwert",
+              "en" : "Rate"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Spontanandningens frekvens.",
+              "de" : "Die Frequenz der Spontanatmung.",
+              "en" : "The frequency of spontaneous breathing."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value",
+            "inputs" : [ {
+              "suffix" : "magnitude",
+              "type" : "DECIMAL",
+              "validation" : {
+                "range" : {
+                  "minOp" : ">=",
+                  "min" : 0.0,
+                  "maxOp" : "<=",
+                  "max" : 200.0
+                },
+                "precision" : {
+                  "minOp" : ">=",
+                  "min" : 0,
+                  "maxOp" : "<=",
+                  "max" : 0
+                }
+              }
+            }, {
+              "suffix" : "unit",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "/min",
+                "label" : "/min",
+                "validation" : {
+                  "range" : {
+                    "minOp" : ">=",
+                    "min" : 0.0,
+                    "maxOp" : "<=",
+                    "max" : 200.0
+                  },
+                  "precision" : {
+                    "minOp" : ">=",
+                    "min" : 0,
+                    "maxOp" : "<=",
+                    "max" : 0
+                  }
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "regularity",
+            "name" : "Regularity",
+            "localizedName" : "Regularity",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at0005",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Regelbundenhet",
+              "de" : "Regelmäßigkeit",
+              "en" : "Regularity"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Spontanandningens regelbundenhet.",
+              "de" : "Die Regelmäßigkeit der Spontanatmung.",
+              "en" : "The regularity of spontaneous breathing."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0006",
+                "label" : "Regular",
+                "localizedLabels" : {
+                  "sv" : "Regelbunden",
+                  "de" : "Regelmäßig",
+                  "en" : "Regular"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Regelbunden andning.",
+                  "de" : "Die Atmungsweise ist regelmäßig.",
+                  "en" : "The breathing pattern is regular."
+                }
+              }, {
+                "value" : "at0007",
+                "label" : "Irregular",
+                "localizedLabels" : {
+                  "sv" : "Oregelbunden",
+                  "de" : "Unregelmäßig",
+                  "en" : "Irregular"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Oregelbunden andning.",
+                  "de" : "Die Atmungsweise ist nicht regelmäßig.",
+                  "en" : "The breathing pattern is not regular."
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "depth",
+            "name" : "Depth",
+            "localizedName" : "Depth",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at0016",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Andningsdjup",
+              "de" : "Tiefe",
+              "en" : "Depth"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Spontanandningens djup.",
+              "de" : "Die Tiefe der Spontanatmung.",
+              "en" : "The depth of spontaneous breathing."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0016]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0017",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "sv" : "Normal",
+                  "de" : "Normal",
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Normalt andningsdjup.",
+                  "de" : "Normale Atmungstiefe.",
+                  "en" : "Normal depth of breathing."
+                }
+              }, {
+                "value" : "at0018",
+                "label" : "Shallow",
+                "localizedLabels" : {
+                  "sv" : "Ytlig",
+                  "de" : "Schwach",
+                  "en" : "Shallow"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Ytligt andningsdjup.",
+                  "de" : "Schwache Atmungstiefe.",
+                  "en" : "Shallow depth of breathing."
+                }
+              }, {
+                "value" : "at0019",
+                "label" : "Deep",
+                "localizedLabels" : {
+                  "sv" : "Djup",
+                  "de" : "Tief",
+                  "en" : "Deep"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Djupandning.",
+                  "de" : "Tiefes Einatmen.",
+                  "en" : "Deep breathing."
+                }
+              }, {
+                "value" : "at0025",
+                "label" : "Variable",
+                "localizedLabels" : {
+                  "sv" : "Ojämn",
+                  "de" : "Veränderung",
+                  "en" : "Variable"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Ojämnt andningsdjup.",
+                  "de" : "Unterschiedliche Atmungstiefe.",
+                  "en" : "Variable depth of breathing."
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "clinical_interpretation",
+            "name" : "Clinical interpretation",
+            "localizedName" : "Clinical interpretation",
+            "rmType" : "DV_TEXT",
+            "nodeId" : "at0009",
+            "min" : 0,
+            "max" : -1,
+            "localizedNames" : {
+              "sv" : "Klinisk tolkning",
+              "de" : "Klinische Auswertung",
+              "en" : "Clinical interpretation"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Ord, fras eller kort beskrivning som fångar den kliniska betydelsen hos andningsfynden.",
+              "de" : "Einzelwort, Satz oder Kurzbeschreibung, die die klinische Bedeutung und den Stellenwert der Atmungsbefunde repräsentiert.",
+              "en" : "Single word, phrase or brief description which represents the clinical meaning and significance of the respiration findings."
+            },
+            "annotations" : {
+              "comment" : "Coding with a terminology is preferred, where possible. For example: Normal breathing; Evidence of respiratory distress; Kussmaul's respiration; Cheyne-Stokes respiration; or Apnoeic episodes. Multiple statements are allowed. "
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0009]/value",
+            "inputs" : [ {
+              "type" : "TEXT"
+            } ]
+          }, {
+            "id" : "inspired_oxygen",
+            "name" : "Inspired oxygen",
+            "localizedName" : "Inspired oxygen",
+            "rmType" : "CLUSTER",
+            "nodeId" : "openEHR-EHR-CLUSTER.inspired_oxygen.v1",
+            "min" : 0,
+            "max" : 1,
+            "dependsOn" : [ "depth", "rate", "clinical_interpretation", "presence", "regularity" ],
+            "localizedNames" : {
+              "sv" : "Inandad syrgas",
+              "de" : "Eingeatmeter Sauerstoff",
+              "en" : "Inspired oxygen"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Mängden syre som ges eller ordineras till patienten, angivet som andel, procent, eller indirekt som syrgasflöde.",
+              "de" : "Die Sauerstoffmenge, die dem Patienten als Fraktion, als Prozentsatz oder indirekt als Flussrate verabreicht wird oder verabreicht werden soll.\r\n\r\n",
+              "en" : "The amount of oxygen being delivered, or to be delivered, to the patient given as a fraction, percentage or indirectly as a flow rate."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/state[at0022]/items[openEHR-EHR-CLUSTER.inspired_oxygen.v1]",
+            "children" : [ {
+              "id" : "flow_rate",
+              "name" : "Flow rate",
+              "localizedName" : "Flow rate",
+              "rmType" : "DV_QUANTITY",
+              "nodeId" : "at0051",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "Syrgasflöde",
+                "de" : "Flussrate",
+                "en" : "Flow rate"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syrgasflöde (flödeshastighet) som ges till en individ.",
+                "de" : "Sauerstoffflussrate, die einer Person gegeben wird.",
+                "en" : "Oxygen flow rate given to an individual."
+              },
+              "annotations" : {
+                "comment" : "For example '5 l/min'."
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/state[at0022]/items[openEHR-EHR-CLUSTER.inspired_oxygen.v1]/items[at0051]/value",
+              "inputs" : [ {
+                "suffix" : "magnitude",
+                "type" : "DECIMAL"
+              }, {
+                "suffix" : "unit",
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "ml/min",
+                  "label" : "ml/min",
+                  "validation" : {
+                    "range" : {
+                      "minOp" : ">=",
+                      "min" : 0.0,
+                      "maxOp" : "<=",
+                      "max" : 50000.0
+                    },
+                    "precision" : {
+                      "minOp" : ">=",
+                      "min" : 2,
+                      "maxOp" : "<=",
+                      "max" : 2
+                    }
+                  }
+                }, {
+                  "value" : "l/min",
+                  "label" : "l/min",
+                  "validation" : {
+                    "range" : {
+                      "minOp" : ">=",
+                      "min" : 0.0,
+                      "maxOp" : "<=",
+                      "max" : 50.0
+                    },
+                    "precision" : {
+                      "minOp" : ">=",
+                      "min" : 2,
+                      "maxOp" : "<=",
+                      "max" : 2
+                    }
+                  }
+                } ]
+              } ]
+            }, {
+              "id" : "on_air",
+              "name" : "On air",
+              "localizedName" : "On air",
+              "rmType" : "DV_BOOLEAN",
+              "nodeId" : "at0057",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "sv" : "På luft",
+                "de" : "On air",
+                "en" : "On air"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Patienten andas vanlig luft, motsvarande 21% O₂ eller 0.21 FiO₂ eller syrgasflöde 0 liter per minut",
+                "de" : "Der Patient erhält Luft, entsprechend 21% O₂ oder 0,21 FiO₂ und eine Sauerstoff-Flussrate von 0 Liter pro Minute.",
+                "en" : "The patient is receiving air, equivalent to 21% O₂ or 0.21 FiO₂ and an oxygen flow rate of 0 litres per minute."
+              },
+              "annotations" : {
+                "comment" : "Where 'On air' is set to true, Flow rate, FiO₂ and Percent O₂ should not be recorded. Conversely 'On air' should be omitted if Flow rate, FiO₂ or Percent O₂ are recorded."
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/state[at0022]/items[openEHR-EHR-CLUSTER.inspired_oxygen.v1]/items[at0057]/value",
+              "inputs" : [ {
+                "type" : "BOOLEAN"
+              } ]
+            } ]
+          }, {
+            "id" : "time",
+            "name" : "Time",
+            "rmType" : "DV_DATE_TIME",
+            "min" : 1,
+            "max" : 1,
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/data[at0001]/events[at0002]/time",
+            "inputs" : [ {
+              "type" : "DATETIME"
+            } ],
+            "inContext" : true
+          } ]
+        }, {
+          "id" : "language",
+          "name" : "Language",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/language",
+          "inContext" : true
+        }, {
+          "id" : "encoding",
+          "name" : "Encoding",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/encoding",
+          "inContext" : true
+        }, {
+          "id" : "subject",
+          "name" : "Subject",
+          "rmType" : "PARTY_PROXY",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.respiration.v2]/subject",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_scheme",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_namespace",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "name",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      }, {
+        "id" : "pulse_heart_beat",
+        "name" : "Pulse/Heart beat",
+        "localizedName" : "Pulse/Heart beat",
+        "rmType" : "OBSERVATION",
+        "nodeId" : "openEHR-EHR-OBSERVATION.pulse.v2",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "Puls/Hjärtfrekvens",
+          "de" : "Pulsfrequenz/Herzfrequenz",
+          "en" : "Pulse/Heart beat"
+        },
+        "localizedDescriptions" : {
+          "sv" : "Hjärtslagens eller pulsens frekvens och tillhörande attribut.",
+          "de" : "Die Frequenz und zugehörige Attribute für die Puls- oder Herzfrequenz.",
+          "en" : "The rate and associated attributes for a pulse or heart beat."
+        },
+        "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]",
+        "children" : [ {
+          "id" : "any_event",
+          "name" : "Any event",
+          "localizedName" : "Any event",
+          "rmType" : "EVENT",
+          "nodeId" : "at0003",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "sv" : "Ospecificerad händelse",
+            "de" : "Jedes Ereignis",
+            "en" : "Any event"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Standardmässig ospecificerad tidpunkt eller tidsintervall som kan anges explicit i en mall, eller genereras automatiskt av vissa IT-system.",
+            "de" : "Ein Standardwert, ein spezifizierter Zeitpunkt oder ein Intervallereignis, welches explizit in einem Template oder während der Laufzeit definiert werden kann.",
+            "en" : "Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]",
+          "children" : [ {
+            "id" : "presence",
+            "name" : "Presence",
+            "localizedName" : "Presence",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at1005",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Närvaro",
+              "de" : "Vorhandensein",
+              "en" : "Presence"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Närvaro av puls eller hjärtslag.",
+              "de" : "Vorhandensein einer Puls- oder Herzfrequenz.",
+              "en" : "Presence of a pulse or heart beat."
+            },
+            "annotations" : {
+              "comment" : "It can be implied that the pulse or heart beat is present if Rate >0 /min."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/data[at0001]/items[at1005]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at1024",
+                "label" : "Present",
+                "localizedLabels" : {
+                  "sv" : "Närvaro",
+                  "de" : "Vorhanden",
+                  "en" : "Present"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Puls eller hjärtslag är identifierade.",
+                  "de" : "Eine Puls- oder eine Herzfrequenz kann ermittelt werden.",
+                  "en" : "A pulse or heart beat can be detected."
+                }
+              }, {
+                "value" : "at1025",
+                "label" : "Not detected",
+                "localizedLabels" : {
+                  "sv" : "Frånvaro",
+                  "de" : "Nicht ermittelbar",
+                  "en" : "Not detected"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Puls eller hjärtslag kan inte identifieras.",
+                  "de" : "Eine Puls- oder eine Herzfrequenz kann nicht ermittelt werden.",
+                  "en" : "A pulse or heart beat cannot be detected."
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "rate",
+            "name" : "Rate",
+            "localizedName" : "Rate",
+            "rmType" : "DV_QUANTITY",
+            "nodeId" : "at0004",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Frekvens",
+              "de" : "Frequenz",
+              "en" : "Rate"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Puls eller hjärtfrekvens, mätt i slag per minut.",
+              "de" : "Die Frequenz, gemessen in Schlägen pro Minute.",
+              "en" : "The rate of the pulse or heart beat, measured in beats per minute."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value",
+            "inputs" : [ {
+              "suffix" : "magnitude",
+              "type" : "DECIMAL",
+              "validation" : {
+                "range" : {
+                  "minOp" : ">=",
+                  "min" : 0.0,
+                  "maxOp" : "<",
+                  "max" : 1000.0
+                },
+                "precision" : {
+                  "minOp" : ">=",
+                  "min" : 0,
+                  "maxOp" : "<=",
+                  "max" : 0
+                }
+              }
+            }, {
+              "suffix" : "unit",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "/min",
+                "label" : "/min",
+                "validation" : {
+                  "range" : {
+                    "minOp" : ">=",
+                    "min" : 0.0,
+                    "maxOp" : "<",
+                    "max" : 1000.0
+                  },
+                  "precision" : {
+                    "minOp" : ">=",
+                    "min" : 0,
+                    "maxOp" : "<=",
+                    "max" : 0
+                  }
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "regularity",
+            "name" : "Regularity",
+            "localizedName" : "Regularity",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at0005",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Regelbunden",
+              "de" : "Regelmäßigkeit",
+              "en" : "Regularity"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Regelbunden puls eller regelbundna hjärtslag",
+              "de" : "Regelmäßigkeit der Puls-/Herzfrequenz.",
+              "en" : "Regularity of the pulse or heart beat."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/data[at0001]/items[at0005]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0006",
+                "label" : "Regular",
+                "localizedLabels" : {
+                  "sv" : "Regelbunden",
+                  "de" : "Regelmäßig",
+                  "en" : "Regular"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Mönstret är regelbundet.",
+                  "de" : "Der Verlauf ist regelmäßig.",
+                  "en" : "The pattern is regular."
+                }
+              }, {
+                "value" : "at1028",
+                "label" : "Irregular",
+                "localizedLabels" : {
+                  "sv" : "Oregelbunden",
+                  "de" : "Unregelmäßig",
+                  "en" : "Irregular"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Mönstret är oregelbundet.",
+                  "de" : "Der Verlauf ist unregelmäßig.",
+                  "en" : "The pattern is irregular."
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "irregular_type",
+            "name" : "Irregular type",
+            "localizedName" : "Irregular type",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at1055",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "sv" : "Oregelbunden typ",
+              "de" : "Unregelmäßiger Typ",
+              "en" : "Irregular type"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Ett mer specifikt mönster av oregelbunden puls eller oregelbundna hjärtslag.",
+              "de" : "Ein spezifischeres Verlaufsmuster einer unregelmäßigen Puls- oder Herzfrequenz.",
+              "en" : "More specific pattern of an irregular pulse or heart beat."
+            },
+            "annotations" : {
+              "comment" : "Selection of a value from this value set is only valid if 'Irregular' is selected from the 'Regularity' data element."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/data[at0001]/items[at1055]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0007",
+                "label" : "Regularly Irregular",
+                "localizedLabels" : {
+                  "sv" : "Regelbundet oregelbunden",
+                  "de" : "Normal unregelmäßig",
+                  "en" : "Regularly Irregular"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Mönstret är oregelbundet i ett regelbundet mönster, exempelvis ett överhoppat hjärtslag var N:te slag.",
+                  "de" : "Der Verlauf ist unregelmäßig, aber in einem regelmäßigen Muster. Zum Beispiel das Ausfallen eines Schlages alle \"n\" Schläge.",
+                  "en" : "The pattern is irregular in a regular pattern,. For example, a dropped beat once every 'n' beats."
+                }
+              }, {
+                "value" : "at0008",
+                "label" : "Irregularly Irregular",
+                "localizedLabels" : {
+                  "sv" : "Oregelbundet oregelbunden",
+                  "de" : "Ungleichmäßig unregelmäßig",
+                  "en" : "Irregularly Irregular"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Mönstret är oregelbundet på ett kaotiskt och oförutsägbart sätt, exempelvis förmaksflimmer.",
+                  "de" : "Der Verlauf ist auf chaotische und unvorhersehbare Weise unregelmäßig. Zum Beispiel: Vorhofflimmern.",
+                  "en" : "The pattern is irregular in a chaotic and unpredictable manner. For example, atrial fibrillation."
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "position",
+            "name" : "Position",
+            "localizedName" : "Position",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at0013",
+            "min" : 0,
+            "max" : 1,
+            "dependsOn" : [ "rate", "irregular_type", "presence", "regularity" ],
+            "localizedNames" : {
+              "sv" : "Kroppsställning",
+              "de" : "Körperhaltung",
+              "en" : "Position"
+            },
+            "localizedDescriptions" : {
+              "sv" : "Patientens kroppsställning under observationen.",
+              "de" : "Die Körperhaltung des Patienten während der Untersuchung.",
+              "en" : "The body position of the subject during the observation."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/state[at0012]/items[at0013]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at1003",
+                "label" : "Standing/upright",
+                "localizedLabels" : {
+                  "sv" : "Stående eller upprätt",
+                  "de" : "Stehend/Aufrecht",
+                  "en" : "Standing/upright"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Patienten stod, gick eller sprang.",
+                  "de" : "Der Patient stand, ging oder rannte.",
+                  "en" : "The subject was standing, walking or running."
+                }
+              }, {
+                "value" : "at1001",
+                "label" : "Sitting",
+                "localizedLabels" : {
+                  "sv" : "Sittande",
+                  "de" : "Sitzend",
+                  "en" : "Sitting"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Patienten satt, exempelvis på en säng eller en stol.",
+                  "de" : "Der Patient saß (zum Beispiel auf einem Bett oder einem Stuhl).",
+                  "en" : "The subject was sitting (for example on bed or chair)."
+                }
+              }, {
+                "value" : "at1002",
+                "label" : "Reclining",
+                "localizedLabels" : {
+                  "sv" : "Halvliggande",
+                  "de" : "Zurücklehnend",
+                  "en" : "Reclining"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Patienten låg i ungefär 45 graders vinkel, med benen upphöjda till bäckennivå.",
+                  "de" : "Der Patient saß zurück gelehnt in einem Winkel von 45 Grad und seine Beine waren bis zur Höhe des Beckens angehoben.",
+                  "en" : "The subject was reclining at an approximate angle of 45 degrees, with the legs elevated to the level of the pelvis."
+                }
+              }, {
+                "value" : "at1000",
+                "label" : "Lying",
+                "localizedLabels" : {
+                  "sv" : "Liggande",
+                  "de" : "Liegend",
+                  "en" : "Lying"
+                },
+                "localizedDescriptions" : {
+                  "sv" : "Patienten låg plant.",
+                  "de" : "Der Patient lag flach.",
+                  "en" : "The subject was lying flat."
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "time",
+            "name" : "Time",
+            "rmType" : "DV_DATE_TIME",
+            "min" : 1,
+            "max" : 1,
+            "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/data[at0002]/events[at0003]/time",
+            "inputs" : [ {
+              "type" : "DATETIME"
+            } ],
+            "inContext" : true
+          } ]
+        }, {
+          "id" : "method",
+          "name" : "Method",
+          "localizedName" : "Method",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at1019",
+          "min" : 0,
+          "max" : 1,
+          "dependsOn" : [ "any_event" ],
+          "localizedNames" : {
+            "sv" : "Metod",
+            "de" : "Methode",
+            "en" : "Method"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Metod som används för att observera pulsen eller hjärtslagen.",
+            "de" : "Die Methode, mit der die Puls- oder Herzfrequenz gemessen wurde.",
+            "en" : "Method used to observe the pulse or heart beat."
+          },
+          "annotations" : {
+            "comment" : "For example, auscultation or electronic monitoring. "
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/protocol[at0010]/items[at1019]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at1032",
+              "label" : "Palpation",
+              "localizedLabels" : {
+                "sv" : "Palpation",
+                "de" : "Palpation",
+                "en" : "Palpation"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Läkare eller sjuksköterska observerar fynden genom fysisk beröring av patienten.",
+                "de" : "Der Befund wurde durch physisches Tasten des Beobachters am Patienten erlangt.",
+                "en" : "The findings are observed by physical touch of the observer on the subject."
+              }
+            }, {
+              "value" : "at1033",
+              "label" : "Auscultation",
+              "localizedLabels" : {
+                "sv" : "Auskultation",
+                "de" : "Auskultation",
+                "en" : "Auscultation"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Fynden observeras med ett hjälpmedel, exempelvis ett stetoskop.",
+                "de" : "Die Untersuchungsergebnisse werden mit Hilfe eines Gerätes, wie zum Beispiel einem Stethoskop, gemessen.",
+                "en" : "The findings are observed with the assistance of a device, such as a stethoscope."
+              }
+            }, {
+              "value" : "at1034",
+              "label" : "Automatic, non-invasive",
+              "localizedLabels" : {
+                "sv" : "Automatisk, icke-invasiv",
+                "de" : "Automatisch, nicht-invasiv",
+                "en" : "Automatic, non-invasive"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Fynden observeras icke-invasivt med hjälp av utrustning såsom en pulsoximeter eller ett stetoskop.",
+                "de" : "Die Untersuchungsergebnisse werden nicht-invasiv unter Anwendung eines Gerätes, wie zum Beispiel mit Hilfe eines Pulsoximeters oder eines Stethoskops, gemessen.",
+                "en" : "The findings are observed non-invasively using a device such as a pulse oximeter or a stethoscope."
+              }
+            }, {
+              "value" : "at1050",
+              "label" : "Automatic, invasive",
+              "localizedLabels" : {
+                "sv" : "Automatisk, invasiv",
+                "de" : "Automatisch, invasiv",
+                "en" : "Automatic, invasive"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Fynden observeras invasivt med hjälp av utrustning såsom en arteriell kateter.",
+                "de" : "Die Untersuchungsergebnisse werden invasiv durch die Verwendung eines Gerätes, wie zum Beispiel eines arteriellen Katheters, gemessen.",
+                "en" : "The findings are observed invasively using a device such as an arterial catheter."
+              }
+            } ],
+            "defaultValue" : "at1034"
+          } ]
+        }, {
+          "id" : "body_site",
+          "name" : "Body site",
+          "localizedName" : "Body site",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at1037",
+          "min" : 0,
+          "max" : 1,
+          "dependsOn" : [ "any_event" ],
+          "localizedNames" : {
+            "sv" : "Lokalisation",
+            "de" : "Körperstelle",
+            "en" : "Body site"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Lokalisation där pulsen eller hjärtslagen observerades.",
+            "de" : "Die Körperstelle an der die Puls- oder die Herzfrequenz gemessen wird.",
+            "en" : "Body site where the pulse or heart beat were observed."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/protocol[at0010]/items[at1037]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at1038",
+              "label" : "Radial Artery - Left",
+              "localizedLabels" : {
+                "sv" : "Strålbensartär - Vänster",
+                "de" : "Arteria radialis - links",
+                "en" : "Radial Artery - Left"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Vänster strålbensartär.",
+                "de" : "Die linke Arteria radialis.",
+                "en" : "The left radial artery."
+              }
+            }, {
+              "value" : "at1039",
+              "label" : "Radial Artery - Right",
+              "localizedLabels" : {
+                "sv" : "Strålbensartär - Höger",
+                "de" : "Arteria radialis - rechts",
+                "en" : "Radial Artery - Right"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Höger strålbensartär.",
+                "de" : "Die rechte Arteria radialis.",
+                "en" : "The right radial artery."
+              }
+            }, {
+              "value" : "at1040",
+              "label" : "Heart",
+              "localizedLabels" : {
+                "sv" : "Hjärt",
+                "de" : "Herz",
+                "en" : "Heart"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Hjärttrakten.",
+                "de" : "Die Region des Herzens.",
+                "en" : "The region of the heart."
+              }
+            }, {
+              "value" : "at1041",
+              "label" : "Carotid Artery - Left",
+              "localizedLabels" : {
+                "sv" : "Halsartär - Vänster",
+                "de" : "Arteria carotis - links",
+                "en" : "Carotid Artery - Left"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Vänster halsartär.",
+                "de" : "Die linke Arteria carotis.",
+                "en" : "The left carotid artery."
+              }
+            }, {
+              "value" : "at1042",
+              "label" : "Carotid Artery - Right",
+              "localizedLabels" : {
+                "sv" : "Halsartär - Höger",
+                "de" : "Arteria carotis - rechts",
+                "en" : "Carotid Artery - Right"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Höger halsartär.",
+                "de" : "Die rechte Arteria carotis.",
+                "en" : "The right carotid artery."
+              }
+            }, {
+              "value" : "at1043",
+              "label" : "Femoral Artery - Left",
+              "localizedLabels" : {
+                "sv" : "Lårbensartär - Vänster",
+                "de" : "Arteria femoralis - links",
+                "en" : "Femoral Artery - Left"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Vänster lårbensartär.",
+                "de" : "Die linke Arteria femoralis.",
+                "en" : "The left femoral artery."
+              }
+            }, {
+              "value" : "at1044",
+              "label" : "Femoral Artery - Right",
+              "localizedLabels" : {
+                "sv" : "Lårbensartär- Höger",
+                "de" : "Arteria femoralis - rechts",
+                "en" : "Femoral Artery - Right"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Höger lårbensartär.",
+                "de" : "Die rechts Arteria femoralis.",
+                "en" : "The right femoral artery."
+              }
+            }, {
+              "value" : "at1049",
+              "label" : "Brachial artery - Right",
+              "localizedLabels" : {
+                "sv" : "Armartär - Höger",
+                "de" : "Arteria brachialis - rechts",
+                "en" : "Brachial artery - Right"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Höger armartär.",
+                "de" : "Die rechte Arteria brachialis.",
+                "en" : "The right brachial artery."
+              }
+            }, {
+              "value" : "at1048",
+              "label" : "Brachial artery - Left",
+              "localizedLabels" : {
+                "sv" : "Armartär - Vänster",
+                "de" : "Arteria brachialis - links",
+                "en" : "Brachial artery - Left"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Vänster armartär.",
+                "de" : "Die linke Arteria brachialis.",
+                "en" : "The left brachial artery."
+              }
+            }, {
+              "value" : "at1047",
+              "label" : "Finger",
+              "localizedLabels" : {
+                "sv" : "Finger",
+                "de" : "Finger",
+                "en" : "Finger"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Ett ospecificerat finger.",
+                "de" : "Ein nicht näher beschriebener Finger.",
+                "en" : "An unspecified finger."
+              }
+            }, {
+              "value" : "at1054",
+              "label" : "Toe",
+              "localizedLabels" : {
+                "sv" : "Tå",
+                "de" : "Zeh",
+                "en" : "Toe"
+              },
+              "localizedDescriptions" : {
+                "sv" : "En ospecificerad tå.",
+                "de" : "Ein nicht näher beschriebener Zeh.",
+                "en" : "An unspecified toe."
+              }
+            }, {
+              "value" : "at1051",
+              "label" : "Ear lobe",
+              "localizedLabels" : {
+                "sv" : "Örsnibb",
+                "de" : "Ohrläppchen",
+                "en" : "Ear lobe"
+              },
+              "localizedDescriptions" : {
+                "sv" : "En ospecificerad örsnibb.",
+                "de" : "Das Ohrläppchen eines unbestimmten Ohres.",
+                "en" : "The lobe of an unspecified ear."
+              }
+            } ],
+            "listOpen" : true,
+            "defaultValue" : "at1047"
+          }, {
+            "suffix" : "other",
+            "type" : "TEXT"
+          } ]
+        }, {
+          "id" : "language",
+          "name" : "Language",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/language",
+          "inContext" : true
+        }, {
+          "id" : "encoding",
+          "name" : "Encoding",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/encoding",
+          "inContext" : true
+        }, {
+          "id" : "subject",
+          "name" : "Subject",
+          "rmType" : "PARTY_PROXY",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Vital signs']/items[openEHR-EHR-OBSERVATION.pulse.v2]/subject",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_scheme",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_namespace",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "name",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      } ]
+    }, {
+      "id" : "calculated_scales",
+      "name" : "Calculated scales",
+      "localizedName" : "Calculated scales",
+      "rmType" : "SECTION",
+      "nodeId" : "openEHR-EHR-SECTION.adhoc.v1",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "sv" : "Vitalparametrar",
+        "de" : "Ad hoc Überschrift",
+        "en" : "Calculated scales"
+      },
+      "localizedDescriptions" : {
+        "sv" : "En allmän avsnittsrubrik som döps om i en openEHR-mall för att passa in i en specifik klinisk kontext.",
+        "de" : "Eine generische Abschnittsüberschrift eines Templates, welche entsprechend dem spezifischen klinischen Kontext umbenannt werden sollte.",
+        "en" : "A generic section header which should be renamed in a template to suit a specific clinical context."
+      },
+      "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']",
+      "children" : [ {
+        "id" : "news2_score",
+        "name" : "NEWS2 Score",
+        "localizedName" : "NEWS2 Score",
+        "rmType" : "OBSERVATION",
+        "nodeId" : "openEHR-EHR-OBSERVATION.news2.v1",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "sv" : "NEWS2",
+          "de" : "NEWS2 Score",
+          "en" : "NEWS2 Score"
+        },
+        "localizedDescriptions" : {
+          "sv" : "En förenklad metod för att registrera försämring av den kliniska statusen hos en patient.",
+          "de" : "Ein einfacher Beurteilungsscore, der verwendet wird, um eine klinische Verschlechterung bei einem Patienten zu identifizieren.",
+          "en" : "A simple assessment score used to identify clinical deterioration in a patient."
+        },
+        "annotations" : {
+          "comment" : "This is the second version of the National Early Warning Score (NEWS), issued by the UK Royal College of Physicians in 2017."
+        },
+        "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]",
+        "children" : [ {
+          "id" : "respiration_rate",
+          "name" : "Respiration rate",
+          "localizedName" : "Respiration rate",
+          "rmType" : "DV_ORDINAL",
+          "nodeId" : "at0006",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Andningsfrekvens",
+            "de" : "Atemfrequenz",
+            "en" : "Respiration rate"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Intervall för uppmätt andningsfrekvens (AF).",
+            "de" : "Kategorie für die Messung der Atemfrequenz.",
+            "en" : "Category for the respiratory rate measurement."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0006]/value",
+          "inputs" : [ {
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0021",
+              "label" : "≤8",
+              "localizedLabels" : {
+                "sv" : "<=8",
+                "de" : "≤8",
+                "en" : "≤8"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Andningsfrekvens lägre än eller lika med 8 andetag per minut. Sätts till 3 poäng.",
+                "de" : "Die Atemfrequenz ist kleiner/gleich 8 Atemzüge/min.",
+                "en" : "The respiratory rate measurement is less than/equal to 8 breaths/min."
+              },
+              "ordinal" : 3
+            }, {
+              "value" : "at0019",
+              "label" : "9-11",
+              "localizedLabels" : {
+                "sv" : "9-11",
+                "de" : "9-11",
+                "en" : "9-11"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Andningsfrekvens mellan 9 och 11 andetag per minut. Sätts till 1 poäng.",
+                "de" : "Die Atemfrequenz liegt zwischen 9 und 11 Atemzüge/min.",
+                "en" : "The respiratory rate measurement is between 9 and 11 breaths/min."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0018",
+              "label" : "12-20",
+              "localizedLabels" : {
+                "sv" : "12-20",
+                "de" : "12-20",
+                "en" : "12-20"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Andningsfrekvens mellan 12 och 20 andetag per minut. Sätts till 0 poäng.",
+                "de" : "Die Atemfrequenz liegt zwischen 12 und 20 Atemzüge/min.",
+                "en" : "The respiratory rate measurement is between 12 and 20 breaths/min."
+              },
+              "ordinal" : 0
+            }, {
+              "value" : "at0020",
+              "label" : "21-24",
+              "localizedLabels" : {
+                "sv" : "21-24",
+                "de" : "21-24",
+                "en" : "21-24"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Andningsfrekvens mellan 21 och 24 andetag per minut. Sätts till 2 poäng.",
+                "de" : "Die Atemfrequenz liegt zwischen 21 und 24 Atemzüge/min.",
+                "en" : "The respiratory rate measurement is between 21 and 24 breaths/min."
+              },
+              "ordinal" : 2
+            }, {
+              "value" : "at0064",
+              "label" : "≥25",
+              "localizedLabels" : {
+                "sv" : ">=25",
+                "de" : "≥25",
+                "en" : "≥25"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Andningsfrekvens högre än eller lika med 25 andetag per minut. Sätts till 3 poäng.",
+                "de" : "Die Atemfrequenz ist größer/gleich 25 Atemzüge/min.",
+                "en" : "The respiratory rate measurement is greater than/equal to 25 breaths/min."
+              },
+              "ordinal" : 3
+            } ]
+          } ]
+        }, {
+          "id" : "spo_scale_1",
+          "name" : "SpO₂ Scale 1",
+          "localizedName" : "SpO₂ Scale 1",
+          "rmType" : "DV_ORDINAL",
+          "nodeId" : "at0029",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Syremättnad skala 1",
+            "de" : "SpO₂ Skala 1",
+            "en" : "SpO₂ Scale 1"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Kategori för uppmätt syremättnad.",
+            "de" : "Kategorie für die Messung der Sauerstoffsättigung.",
+            "en" : "Category for the oxygen saturation measurement."
+          },
+          "annotations" : {
+            "comment" : "'SpO₂ Scale 1' and 'SpO₂ Scale 2' are variations of the same physiological variable to be used in different clinical scenarios. Scale 1 will be used for most patients, with the exception of patients with an oxygen saturation target range of 88–92%, such as patients with hypercapnic respiratory failure."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0029]/value",
+          "inputs" : [ {
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0033",
+              "label" : "≤91",
+              "localizedLabels" : {
+                "sv" : "<=91",
+                "de" : "≤91",
+                "en" : "≤91"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är lägre än eller lika med 91%.",
+                "de" : "Der Sauerstoffsättigungsgrad ist kleiner/gleich 91%.",
+                "en" : "The oxygen saturation level is less than/equal to 91%."
+              },
+              "ordinal" : 3
+            }, {
+              "value" : "at0032",
+              "label" : "92-93",
+              "localizedLabels" : {
+                "sv" : "92-93",
+                "de" : "92-93",
+                "en" : "92-93"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är mellan 92% och 93%.",
+                "de" : "Der Sauerstoffsättigungsgrad liegt zwischen 92% und 93%.",
+                "en" : "The oxygen saturation level is between 92% and 93%."
+              },
+              "ordinal" : 2
+            }, {
+              "value" : "at0031",
+              "label" : "94-95",
+              "localizedLabels" : {
+                "sv" : "94-95",
+                "de" : "94-95",
+                "en" : "94-95"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är mellan 94% och 95%.",
+                "de" : "Der Sauerstoffsättigungsgrad liegt zwischen 94% und 95%.",
+                "en" : "The oxygen saturation level is between 94% and 95%."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0030",
+              "label" : "≥96",
+              "localizedLabels" : {
+                "sv" : ">= 96",
+                "de" : "≥96",
+                "en" : "≥96"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är högre än eller lika med 96%.",
+                "de" : "Der Sauerstoffsättigungsgrad ist größer/gleich 96%.",
+                "en" : "The oxygen saturation level is greater than/equal to 96%."
+              },
+              "ordinal" : 0
+            } ]
+          } ]
+        }, {
+          "id" : "spo_scale_2",
+          "name" : "SpO₂ Scale 2",
+          "localizedName" : "SpO₂ Scale 2",
+          "rmType" : "DV_ORDINAL",
+          "nodeId" : "at0047",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Syremättnad skala 2",
+            "de" : "SpO₂ Skala 2",
+            "en" : "SpO₂ Scale 2"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Kategori för uppmätt syremättnad. Används bara för patienter som optimalt ska ha en syremättnad på 88-92%, exempelvis patienter med hyperkapnisk andningssvikt.",
+            "de" : "Kategorie für die Messung der Sauerstoffsättigung bei Patienten mit einem Zielsauerstoffsättigungsbereich von 88-92%'.",
+            "en" : "Category for the oxygen saturation measurement in patients with a target oxygen saturation range of 88–92%."
+          },
+          "annotations" : {
+            "comment" : "'SpO₂ Scale 1' and 'SpO₂ Scale 2' are variations of the same physiological variable to be used in different clinical scenarios. Scale 2 will be used only in patients with an oxygen saturation target range of 88–92%, such as patients with hypercapnic respiratory failure. Otherwise use Scale 1."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0047]/value",
+          "inputs" : [ {
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0061",
+              "label" : "≤83",
+              "localizedLabels" : {
+                "sv" : "<=83",
+                "de" : "≤83",
+                "en" : "≤83"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är lägre än eller lika med 83%.",
+                "de" : "Der Sauerstoffsättigungsgrad ist kleiner/gleich 83%.",
+                "en" : "The oxygen saturation level is less/equal to 83%."
+              },
+              "ordinal" : 3
+            }, {
+              "value" : "at0050",
+              "label" : "84-85",
+              "localizedLabels" : {
+                "sv" : "84-85",
+                "de" : "84-85",
+                "en" : "84-85"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är mellan 84 % och 85%.",
+                "de" : "Der Sauerstoffsättigungsgrad liegt zwischen 84% und 85%.",
+                "en" : "The oxygen saturation level is between 84% and 85%."
+              },
+              "ordinal" : 2
+            }, {
+              "value" : "at0049",
+              "label" : "86-87",
+              "localizedLabels" : {
+                "sv" : "86-87",
+                "de" : "86-87",
+                "en" : "86-87"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är mellan 86 % och 87%.",
+                "de" : "Der Sauerstoffsättigungsgrad liegt zwischen 86% und 87%.",
+                "en" : "The oxygen saturation level is between 86% and 87%."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0048",
+              "label" : "88-92 or ≥93 on air",
+              "localizedLabels" : {
+                "sv" : "88-92 or >=93 på luft",
+                "de" : "88-92 oder ≥93 on air",
+                "en" : "88-92 or ≥93 on air"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är mellan 88% och 92% eller lika med eller större än 93% på luft.",
+                "de" : "Der Sauerstoffsättigungsgrad liegt zwischen 88% und 92% oder mehr als/gleich 93% on air.",
+                "en" : "The oxygen saturation level is between 88% and 92% or greater than/equal to 93% on air."
+              },
+              "ordinal" : 0
+            }, {
+              "value" : "at0062",
+              "label" : "93-94 on oxygen",
+              "localizedLabels" : {
+                "sv" : "93-94 med syrgas",
+                "de" : "93-94 über Sauerstoff",
+                "en" : "93-94 on oxygen"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är mellan 93% och 94% med syrgastillförsel. Sätts till 1 poäng.",
+                "de" : "Der Sauerstoffsättigungsgrad liegt zwischen 93% und 94% bei zusätzlichem Sauerstoff.",
+                "en" : "The oxygen saturation level is between 93% and 94% on supplemental oxygen."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0063",
+              "label" : "95-96 on oxygen",
+              "localizedLabels" : {
+                "sv" : "95-96 med syrgas",
+                "de" : "95-96 über Sauerstoff",
+                "en" : "95-96 on oxygen"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är mellan 95% och 96% med syrgastillförsel.",
+                "de" : "Der Sauerstoffsättigungsgrad liegt zwischen 95% und 96% bei zusätzlichem Sauerstoff.",
+                "en" : "The oxygen saturation level is between 95% and 96% on supplemental oxygen."
+              },
+              "ordinal" : 2
+            }, {
+              "value" : "at0051",
+              "label" : "≥97 on oxygen",
+              "localizedLabels" : {
+                "sv" : ">=97 med syrgas",
+                "de" : "≥97 über Sauerstoff",
+                "en" : "≥97 on oxygen"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Syremättnaden är lika med, eller större än 97%, med syrgastillförsel. Sätts till 3 poäng.",
+                "de" : "Der Sauerstoffsättigungsgrad ist größer/gleich 97% bei zusätzlichem Sauerstoff.",
+                "en" : "The oxygen saturation level is greater than/equal to 97% on supplemental oxygen."
+              },
+              "ordinal" : 3
+            } ]
+          } ]
+        }, {
+          "id" : "air_or_oxygen",
+          "name" : "Air or oxygen?",
+          "localizedName" : "Air or oxygen?",
+          "rmType" : "DV_ORDINAL",
+          "nodeId" : "at0034",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Luft eller syrgas?",
+            "de" : "Luft oder Sauerstoff?",
+            "en" : "Air or oxygen?"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Om patienten andas rumsluft eller får syrgastillförsel.",
+            "de" : "Erhält der Patient zusätzlichen Sauerstoff?",
+            "en" : "Is the patient receiving supplemental oxygen?"
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0034]/value",
+          "inputs" : [ {
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0036",
+              "label" : "Air",
+              "localizedLabels" : {
+                "sv" : "Luft",
+                "de" : "Luft",
+                "en" : "Air"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Patienten får inte syrgastillförsel.",
+                "de" : "Der Patient atmet Raumluft; er erhält keinen zusätzlichen Sauerstoff.",
+                "en" : "The patient is breathing room air; not receiving supplemental oxygen."
+              },
+              "ordinal" : 0
+            }, {
+              "value" : "at0037",
+              "label" : "Oxygen",
+              "localizedLabels" : {
+                "sv" : "Syrgas",
+                "de" : "Sauerstoff",
+                "en" : "Oxygen"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Patienten får syrgastillförsel.",
+                "de" : "Der Patient erhält zusätzlichen Sauerstoff.",
+                "en" : "The patient is receiving supplemental oxygen."
+              },
+              "ordinal" : 2
+            } ]
+          } ]
+        }, {
+          "id" : "systolic_blood_pressure",
+          "name" : "Systolic blood pressure",
+          "localizedName" : "Systolic blood pressure",
+          "rmType" : "DV_ORDINAL",
+          "nodeId" : "at0004",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Systoliskt blodtryck",
+            "de" : "Systolischer Blutdruck",
+            "en" : "Systolic blood pressure"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Kategori för uppmätt systoliskt blodtryck.",
+            "de" : "Kategorie für die Messung des Systolischen Blutdrucks.",
+            "en" : "Category for the systolic blood pressure measurement."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value",
+          "inputs" : [ {
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0017",
+              "label" : "≤90",
+              "localizedLabels" : {
+                "sv" : "<=90",
+                "de" : "≤90",
+                "en" : "≤90"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Det systoliska blodtrycket är lägre än eller lika med 90 mmHg.",
+                "de" : "Der systolische Blutdruck ist kleiner/gleich 90 mmHg.",
+                "en" : "The systolic blood pressure measurement is less than/equal to 90 mmHg."
+              },
+              "ordinal" : 3
+            }, {
+              "value" : "at0016",
+              "label" : "91-100",
+              "localizedLabels" : {
+                "sv" : "91-100",
+                "de" : "91-100",
+                "en" : "91-100"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Det systoliska blodtrycket är mellan 91 och 100 mmHg.",
+                "de" : "Der systolische Blutdruck liegt zwischen 91 und 100 mmHg.",
+                "en" : "The systolic blood pressure measurement is between 91 and 100 mmHg."
+              },
+              "ordinal" : 2
+            }, {
+              "value" : "at0015",
+              "label" : "101-110",
+              "localizedLabels" : {
+                "sv" : "101-110",
+                "de" : "101-110",
+                "en" : "101-110"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Det systoliska blodtrycket är mellan 101 och 110 mmHg.",
+                "de" : "Der systolische Blutdruck liegt zwischen 101 und 110 mmHg.",
+                "en" : "The systolic blood pressure measurement is between 101 and 110 mmHg."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0014",
+              "label" : "111-219",
+              "localizedLabels" : {
+                "sv" : "111-219",
+                "de" : "111-219",
+                "en" : "111-219"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Det systoliska blodtrycket är mellan 111 och 219 mmHg.",
+                "de" : "Der systolische Blutdruck liegt zwischen 111 und 219 mmHg.",
+                "en" : "The systolic blood pressure measurement is between 111 and 219 mmHg."
+              },
+              "ordinal" : 0
+            }, {
+              "value" : "at0067",
+              "label" : "≥220",
+              "localizedLabels" : {
+                "sv" : "≥220",
+                "de" : "≥220",
+                "en" : "≥220"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Det systoliska blodtrycket är lika med eller högre än 220 mmHg.",
+                "de" : "Der systolische Blutdruck ist größer/gleich 220 mmHg.",
+                "en" : "The systolic blood pressure measurement is greater than/equal to 220 mmHg."
+              },
+              "ordinal" : 3
+            } ]
+          } ]
+        }, {
+          "id" : "pulse",
+          "name" : "Pulse",
+          "localizedName" : "Pulse",
+          "rmType" : "DV_ORDINAL",
+          "nodeId" : "at0005",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Hjärtfrekvens",
+            "de" : "Puls",
+            "en" : "Pulse"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Kategori för uppmätt hjärtfrekvens.",
+            "de" : "Kategorie für die Messung des Puls.",
+            "en" : "Category for the pulse measurement."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value",
+          "inputs" : [ {
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0010",
+              "label" : "≤40",
+              "localizedLabels" : {
+                "sv" : "<=40",
+                "de" : "≤40",
+                "en" : "≤40"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Hjärtfrekvensen är lägre än eller lika med 40 slag per minut. \r\n",
+                "de" : "Der Puls ist kleiner/gleich 40 Schläge/Min.",
+                "en" : "The pulse measurement is less than/equal to 40 beats/min."
+              },
+              "ordinal" : 3
+            }, {
+              "value" : "at0012",
+              "label" : "41-50",
+              "localizedLabels" : {
+                "sv" : "41-50",
+                "de" : "41-50",
+                "en" : "41-50"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Hjärtfrekvensen är mellan 40 och 50 slag per minut.",
+                "de" : "Der Puls liegt zwischen 41 und 50 Schlägen/Min.",
+                "en" : "The pulse measurement is between 41 and 50 beats/min."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0013",
+              "label" : "51-90",
+              "localizedLabels" : {
+                "sv" : "51-90",
+                "de" : "51-90",
+                "en" : "51-90"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Hjärtfrekvensen är mellan 51 och 90 slag per minut.",
+                "de" : "Der Puls liegt zwischen 51 und 90 Schlägen/Min.",
+                "en" : "The pulse measurement is between 51 and 90 beats/min."
+              },
+              "ordinal" : 0
+            }, {
+              "value" : "at0068",
+              "label" : "91-110",
+              "localizedLabels" : {
+                "sv" : "91-110",
+                "de" : "91-110",
+                "en" : "91-110"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Hjärtfrekvensen är mellan 91 och 110 slag per minut.",
+                "de" : "Der Puls liegt zwischen 91 und 110 Schlägen/Min.",
+                "en" : "The pulse measurement is between 91 and 110 beats/min."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0011",
+              "label" : "111-130",
+              "localizedLabels" : {
+                "sv" : "111-130",
+                "de" : "111-130",
+                "en" : "111-130"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Hjärtfrekvensen är mellan 111 och 130 slag per minut.",
+                "de" : "Der Puls liegt zwischen 111 und 130 Schlägen/Min.",
+                "en" : "The pulse measurement is between 111 and 130 beats/min."
+              },
+              "ordinal" : 2
+            }, {
+              "value" : "at0065",
+              "label" : "≥131",
+              "localizedLabels" : {
+                "sv" : ">=131",
+                "de" : "≥131",
+                "en" : "≥131"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Hjärtfrekvensen är högre än eller lika med 131 slag per minut.",
+                "de" : "Der Puls ist größer/gleich 131 Schlägen/Min.",
+                "en" : "The pulse measurement is greater than/equal to 131 beats/min."
+              },
+              "ordinal" : 3
+            } ]
+          } ]
+        }, {
+          "id" : "consciousness",
+          "name" : "Consciousness",
+          "localizedName" : "Consciousness",
+          "rmType" : "DV_ORDINAL",
+          "nodeId" : "at0008",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Medvetandegrad",
+            "de" : "Bewusstsein",
+            "en" : "Consciousness"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Kategori för medvetandegrad. Bedöms enligt ACVPU-skalan.",
+            "de" : "Kategorie für den beobachteten Bewusstseinszustand, unter Verwendung der ACVPU-Skala.",
+            "en" : "Category for the observed conscious state, using the ACVPU scale."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value",
+          "inputs" : [ {
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0024",
+              "label" : "Alert",
+              "localizedLabels" : {
+                "sv" : "Alert och vaken",
+                "de" : "Wach",
+                "en" : "Alert"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Patienten är helt vaken och alert.",
+                "de" : "Der Patient ist wach oder aufmerksam; die Bewertung erfolgt mit 0 Punkten.",
+                "en" : "The patient is alert or awake; scored as 0 points."
+              },
+              "ordinal" : 0
+            }, {
+              "value" : "at0025",
+              "label" : "C, V, P or U",
+              "localizedLabels" : {
+                "sv" : "C, V, P eller U",
+                "de" : "C, V, P or U",
+                "en" : "C, V, P or U"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Patienten har nytillkommen förvirring, reagerar enbart på tilltal eller smärta, eller är medvetandesänkt och reagerar inte på tilltal eller smärta.",
+                "de" : "Der Patient ist seit kurzem verwirrt, reagiert nur auf Stimme oder Schmerz oder ist nicht ansprechbar; bewertet mit 3 Punkten.",
+                "en" : "The patient is newly confused, responds only to voice or pain, or is unresponsive; scored as 3 points."
+              },
+              "ordinal" : 3
+            } ]
+          } ]
+        }, {
+          "id" : "temperature",
+          "name" : "Temperature",
+          "localizedName" : "Temperature",
+          "rmType" : "DV_ORDINAL",
+          "nodeId" : "at0007",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Temperatur",
+            "de" : "Temperatur",
+            "en" : "Temperature"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Kategori för den uppmätta kroppstemperaturen.",
+            "de" : "Bereichskategorie für die Messung der Körpertemperatur.",
+            "en" : "Range category for the body temperature measurement."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0007]/value",
+          "inputs" : [ {
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0039",
+              "label" : "≤35.0",
+              "localizedLabels" : {
+                "sv" : "<=35,0",
+                "de" : "≤35.0",
+                "en" : "≤35.0"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Kroppstemperaturen är lägre än eller lika med 35 grader Celsius.",
+                "de" : "Die Körpertemperatur ist kleiner/gleich 35 Grad Celcius.",
+                "en" : "The body temperature is less than/equal to 35 degrees Celcius."
+              },
+              "ordinal" : 3
+            }, {
+              "value" : "at0023",
+              "label" : "35.1-36.0",
+              "localizedLabels" : {
+                "sv" : "35,1-36,0",
+                "de" : "35.1-36.0",
+                "en" : "35.1-36.0"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Kroppstemperaturen är mellan 35,1 och 36,0 grader Celsius.",
+                "de" : "Die Körpertemperatur liegt zwischen 35.1 und 36.0 Grad Celcius.",
+                "en" : "The body temperature measurement is between 35.1 and 36.0 degrees Celsius."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0022",
+              "label" : "36.1-38.0",
+              "localizedLabels" : {
+                "sv" : "36,1-38,0",
+                "de" : "36.1-38.0",
+                "en" : "36.1-38.0"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Kroppstemperaturen är mellan 36,1 och 38,0 grader Celsius.",
+                "de" : "Die Körpertemperatur liegt zwischen 36.1 und 38.0 Grad Celcius.\r\n",
+                "en" : "The body temperature measurement is between 36.1 and 38.0 degrees Celsius."
+              },
+              "ordinal" : 0
+            }, {
+              "value" : "at0066",
+              "label" : "38.1-39.0",
+              "localizedLabels" : {
+                "sv" : "38,1-39,0",
+                "de" : "38.1-39.0",
+                "en" : "38.1-39.0"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Kroppstemperaturen är mellan 38,1 och 39,0 grader Celsius.",
+                "de" : "Die Körpertemperatur liegt zwischen 38.1 und 39.0 Grad Celcius.\r\n",
+                "en" : "The body temperature measurement is between 38.1 and 39.0 degrees Celsius."
+              },
+              "ordinal" : 1
+            }, {
+              "value" : "at0038",
+              "label" : "≥39.1",
+              "localizedLabels" : {
+                "sv" : ">=39,1",
+                "de" : "≥39.1",
+                "en" : "≥39.1"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Kroppstemperaturen är högre än eller lika med 39,1 grader Celsius.",
+                "de" : "Die Körpertemperatur ist größer/gleich 39.1 Grad Celcius.",
+                "en" : "The body temperature is greater than/equal to 39.1 degrees Celcius."
+              },
+              "ordinal" : 2
+            } ]
+          } ]
+        }, {
+          "id" : "total_score",
+          "name" : "Total score",
+          "localizedName" : "Total score",
+          "rmType" : "DV_COUNT",
+          "nodeId" : "at0028",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Totalpoäng",
+            "de" : "Gesamtsumme",
+            "en" : "Total score"
+          },
+          "localizedDescriptions" : {
+            "sv" : "*The total sum of ordinal values associated with six relevant NEWS2 physiological parameters, plus the supplemental oxygen weighting score.(en)",
+            "de" : "Die Gesamtsumme der Punkte, die für jede der Komponentenvariablen vergeben wurde.\r\n",
+            "en" : "The sum of points assigned for each of the component variables."
+          },
+          "annotations" : {
+            "comment" : "The total score may be generated at run-time."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0028]/value",
+          "inputs" : [ {
+            "type" : "INTEGER",
+            "validation" : {
+              "range" : {
+                "minOp" : ">=",
+                "min" : 0,
+                "maxOp" : "<=",
+                "max" : 20
+              }
+            }
+          } ]
+        }, {
+          "id" : "clinical_risk_category",
+          "name" : "Clinical risk category",
+          "localizedName" : "Clinical risk category",
+          "rmType" : "DV_CODED_TEXT",
+          "nodeId" : "at0056",
+          "min" : 0,
+          "max" : 1,
+          "localizedNames" : {
+            "sv" : "Klinisk riskkategori",
+            "de" : "Kategorie für klinisches Risiko",
+            "en" : "Clinical risk category"
+          },
+          "localizedDescriptions" : {
+            "sv" : "Riskkategorisering baserad på de fysiologiska parametrarna samt beskrivning av lämplig responsnivå.",
+            "de" : "Gesamtkategorie, die die Notwendigkeit und das Ausmaß des klinischen Ansprechens darstellt, das als Reaktion auf die physiologischen Variablen erforderlich ist.\r\n",
+            "en" : "Overall category representing the urgency and scale of the clinical response required in response to the physiological variables."
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0056]/value",
+          "inputs" : [ {
+            "suffix" : "code",
+            "type" : "CODED_TEXT",
+            "list" : [ {
+              "value" : "at0057",
+              "label" : "Low",
+              "localizedLabels" : {
+                "sv" : "Låg",
+                "de" : "Niedrig",
+                "en" : "Low"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Avdelningsbaserade åtgärder.",
+                "de" : "Stationsbasierte Reaktion.",
+                "en" : "Ward-based response."
+              }
+            }, {
+              "value" : "at0058",
+              "label" : "Low-medium",
+              "localizedLabels" : {
+                "sv" : "Låg-mellan",
+                "de" : "Niedrig-mittel",
+                "en" : "Low-medium"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Brådskande avdelningsbaserade åtgärder.",
+                "de" : "Dringende Reaktion auf der Station.",
+                "en" : "Urgent ward-based response."
+              }
+            }, {
+              "value" : "at0059",
+              "label" : "Medium",
+              "localizedLabels" : {
+                "sv" : "Mellan",
+                "de" : "Mittel",
+                "en" : "Medium"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Brådskande åtgärder.",
+                "de" : "Wichtiger Grenzwert für dringende Reaktionen.",
+                "en" : "Key threshold for urgent response."
+              }
+            }, {
+              "value" : "at0060",
+              "label" : "High",
+              "localizedLabels" : {
+                "sv" : "Hög",
+                "de" : "Hoch",
+                "en" : "High"
+              },
+              "localizedDescriptions" : {
+                "sv" : "Akuta åtgärder.",
+                "de" : "Dringend oder Notfallreaktion.",
+                "en" : "Urgent or emergency response."
+              }
+            } ]
+          } ]
+        }, {
+          "id" : "time",
+          "name" : "Time",
+          "rmType" : "DV_DATE_TIME",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/data[at0001]/events[at0002]/time",
+          "inputs" : [ {
+            "type" : "DATETIME"
+          } ],
+          "inContext" : true
+        }, {
+          "id" : "language",
+          "name" : "Language",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/language",
+          "inContext" : true
+        }, {
+          "id" : "encoding",
+          "name" : "Encoding",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/encoding",
+          "inContext" : true
+        }, {
+          "id" : "subject",
+          "name" : "Subject",
+          "rmType" : "PARTY_PROXY",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.adhoc.v1,'Calculated scales']/items[openEHR-EHR-OBSERVATION.news2.v1]/subject",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_scheme",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_namespace",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "name",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      } ]
+    }, {
+      "id" : "category",
+      "rmType" : "DV_CODED_TEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/category",
+      "inputs" : [ {
+        "suffix" : "code",
+        "type" : "CODED_TEXT",
+        "list" : [ {
+          "value" : "433",
+          "label" : "event",
+          "localizedLabels" : {
+            "sv" : "",
+            "de" : "",
+            "en" : "event"
+          }
+        } ],
+        "terminology" : "openehr"
+      } ],
+      "inContext" : true
+    }, {
+      "id" : "language",
+      "name" : "Language",
+      "rmType" : "CODE_PHRASE",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/language",
+      "inContext" : true
+    }, {
+      "id" : "territory",
+      "name" : "Territory",
+      "rmType" : "CODE_PHRASE",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/territory",
+      "inContext" : true
+    }, {
+      "id" : "composer",
+      "name" : "Composer",
+      "rmType" : "PARTY_PROXY",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/composer",
+      "inputs" : [ {
+        "suffix" : "id",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "id_scheme",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "id_namespace",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "name",
+        "type" : "TEXT"
+      } ],
+      "inContext" : true
+    } ]
+  }
+}
